@@ -1,0 +1,3 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/trist/Desktop/FinalGroupCapstone/Cryptic Catacombs/Cryptic Catacombs/Content/Arial.spritefont","C:/Users/trist/Desktop/FinalGroupCapstone/Cryptic Catacombs/Cryptic Catacombs/Content/bin/DesktopGL/Content/Arial.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.2417312
+"C:/Users/trist/Desktop/FinalGroupCapstone/Cryptic Catacombs/Cryptic Catacombs/Content/ball.png","C:/Users/trist/Desktop/FinalGroupCapstone/Cryptic Catacombs/Cryptic Catacombs/Content/bin/DesktopGL/Content/ball.xnb","TextureProcessor","Texture2DContent",8368,16469,0.012985
