@@ -4,17 +4,25 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+<<<<<<< HEAD
     <File>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/Arial.spritefont</File>
     <File>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/ball.png</File>
     <File>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/door.png</File>
     <File>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/floor.png</File>
     <File>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/wall.png</File>
+=======
+    <File>C:/Users/trist/Desktop/FinalGroupCapstone/Cryptic Catacombs/Cryptic Catacombs/Content/Arial.spritefont</File>
+    <File>C:/Users/trist/Desktop/FinalGroupCapstone/Cryptic Catacombs/Cryptic Catacombs/Content/ball.png</File>
+>>>>>>> 1b8b20c (Adding Starting Files)
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
+<<<<<<< HEAD
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
+=======
+>>>>>>> 1b8b20c (Adding Starting Files)
   </DestFiles>
 </SourceFileCollection>

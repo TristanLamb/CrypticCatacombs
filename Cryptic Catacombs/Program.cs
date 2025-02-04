@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using System;
 
 namespace Cryptic_Catacombs
@@ -13,3 +14,8 @@ namespace Cryptic_Catacombs
     }
 }
 
+=======
+﻿
+using var game = new Cryptic_Catacombs.Game1();
+game.Run();
+>>>>>>> 1b8b20c (Adding Starting Files)

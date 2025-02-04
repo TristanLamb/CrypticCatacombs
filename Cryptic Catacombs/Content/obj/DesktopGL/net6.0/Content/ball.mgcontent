@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<<<<<<< HEAD
   <SourceFile>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/ball.png</SourceFile>
   <SourceTime>2025-02-07T14:05:44.4756187-05:00</SourceTime>
   <DestFile>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/bin/DesktopGL/Content/ball.xnb</DestFile>
   <DestTime>2025-02-09T14:43:48.8432503-05:00</DestTime>
+=======
+  <SourceFile>C:/Users/trist/Desktop/FinalGroupCapstone/Cryptic Catacombs/Cryptic Catacombs/Content/ball.png</SourceFile>
+  <SourceTime>2025-01-21T15:40:07.444244-05:00</SourceTime>
+  <DestFile>C:/Users/trist/Desktop/FinalGroupCapstone/Cryptic Catacombs/Cryptic Catacombs/Content/bin/DesktopGL/Content/ball.xnb</DestFile>
+  <DestTime>2025-02-04T15:36:52.1046875-05:00</DestTime>
+>>>>>>> 1b8b20c (Adding Starting Files)
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T07:44:56-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

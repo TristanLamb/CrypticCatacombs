@@ -10,7 +10,10 @@ namespace Cryptic_Catacombs
         private Texture2D ballObject;
         private Vector2 ballPosition;
         private float ballSpeed;
+<<<<<<< HEAD
         public Rectangle BoundingBox => new Rectangle((int)ballPosition.X, (int)ballPosition.Y, 32, 32);
+=======
+>>>>>>> 1b8b20c (Adding Starting Files)
 
         public void LoadContent(ContentManager content)
         {
@@ -19,6 +22,7 @@ namespace Cryptic_Catacombs
             ballSpeed = 100f;
         }
 
+<<<<<<< HEAD
         public void Update(GameTime gameTime, GraphicsDeviceManager graphics, Map map)
         {
             KeyboardState keyPressed = Keyboard.GetState();
@@ -53,6 +57,17 @@ namespace Cryptic_Catacombs
             }
 
             ballPosition = newPosition;
+=======
+        public void Update(GameTime gameTime, GraphicsDeviceManager graphics)
+        {
+            KeyboardState keyPressed = Keyboard.GetState();
+            float updatedBallSpeed = ballSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            if (keyPressed.IsKeyDown(Keys.W)) { ballPosition.Y -= updatedBallSpeed; }
+            if (keyPressed.IsKeyDown(Keys.S)) { ballPosition.Y += updatedBallSpeed; }
+            if (keyPressed.IsKeyDown(Keys.A)) { ballPosition.X -= updatedBallSpeed; }
+            if (keyPressed.IsKeyDown(Keys.D)) { ballPosition.X += updatedBallSpeed; }
+>>>>>>> 1b8b20c (Adding Starting Files)
 
             ballPosition.X = MathHelper.Clamp(ballPosition.X, 0, graphics.PreferredBackBufferWidth - ballObject.Width);
             ballPosition.Y = MathHelper.Clamp(ballPosition.Y, 0, graphics.PreferredBackBufferHeight - ballObject.Height);

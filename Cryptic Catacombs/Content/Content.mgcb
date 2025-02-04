@@ -32,6 +32,7 @@
 /processorParam:TextureFormat=Color
 /build:ball.png
 
+<<<<<<< HEAD
 #begin door.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -68,3 +69,5 @@
 /processorParam:TextureFormat=Color
 /build:wall.png
 
+=======
+>>>>>>> 1b8b20c (Adding Starting Files)

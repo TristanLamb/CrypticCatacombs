@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 using System;
+=======
+>>>>>>> 1b8b20c (Adding Starting Files)
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -13,13 +16,19 @@ namespace Cryptic_Catacombs
         private GameStateManager _gameStateManager;
         private Player _player;
         private MenuManager _menuManager;
+<<<<<<< HEAD
         private Map _map;
+=======
+>>>>>>> 1b8b20c (Adding Starting Files)
 
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
+<<<<<<< HEAD
             _graphics.ApplyChanges();
 
+=======
+>>>>>>> 1b8b20c (Adding Starting Files)
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
@@ -37,6 +46,7 @@ namespace Cryptic_Catacombs
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             _player.LoadContent(Content);
             _menuManager.LoadContent(Content);
+<<<<<<< HEAD
 
             base.LoadContent();
 
@@ -70,6 +80,8 @@ namespace Cryptic_Catacombs
 
             _map = new Map(tiles, tileSize);
             _map.LoadContent(Content);
+=======
+>>>>>>> 1b8b20c (Adding Starting Files)
         }
 
         protected override void Update(GameTime gameTime)
@@ -77,7 +89,11 @@ namespace Cryptic_Catacombs
             _gameStateManager.Update(Keyboard.GetState(), this);
             if (_gameStateManager.CurrentGameState == GameState.Playing)
             {
+<<<<<<< HEAD
                 _player.Update(gameTime, _graphics, _map);
+=======
+                _player.Update(gameTime, _graphics);
+>>>>>>> 1b8b20c (Adding Starting Files)
             }
             base.Update(gameTime);
         }
@@ -86,11 +102,17 @@ namespace Cryptic_Catacombs
         {
             GraphicsDevice.Clear(Color.CornflowerBlue); 
             _spriteBatch.Begin();
+<<<<<<< HEAD
             
             
             if (_gameStateManager.CurrentGameState == GameState.Playing)
             {
                 _map.Draw(_spriteBatch);
+=======
+
+            if (_gameStateManager.CurrentGameState == GameState.Playing)
+            {
+>>>>>>> 1b8b20c (Adding Starting Files)
                 _player.Draw(_spriteBatch);
             }
             else
