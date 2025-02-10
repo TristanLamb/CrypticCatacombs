@@ -10,6 +10,7 @@ namespace Cryptic_Catacombs
         private Texture2D ballObject;
         private Vector2 ballPosition;
         private float ballSpeed;
+        public Rectangle BoundingBox => new Rectangle((int)ballPosition.X, (int)ballPosition.Y, 32, 32);
 
         public void LoadContent(ContentManager content)
         {
@@ -18,15 +19,40 @@ namespace Cryptic_Catacombs
             ballSpeed = 100f;
         }
 
-        public void Update(GameTime gameTime, GraphicsDeviceManager graphics)
+        public void Update(GameTime gameTime, GraphicsDeviceManager graphics, Map map)
         {
             KeyboardState keyPressed = Keyboard.GetState();
             float updatedBallSpeed = ballSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            Vector2 newPosition = ballPosition;
+            
+            Vector2 tempPosition = ballPosition;
 
-            if (keyPressed.IsKeyDown(Keys.W)) { ballPosition.Y -= updatedBallSpeed; }
-            if (keyPressed.IsKeyDown(Keys.S)) { ballPosition.Y += updatedBallSpeed; }
-            if (keyPressed.IsKeyDown(Keys.A)) { ballPosition.X -= updatedBallSpeed; }
-            if (keyPressed.IsKeyDown(Keys.D)) { ballPosition.X += updatedBallSpeed; }
+            if (keyPressed.IsKeyDown(Keys.W))
+            {
+                tempPosition.Y -= updatedBallSpeed;
+                if (!map.CheckCollision(new Rectangle((int)tempPosition.X, (int)tempPosition.Y, 32, 32)))
+                    newPosition.Y -= updatedBallSpeed;
+            }
+            if (keyPressed.IsKeyDown(Keys.S))
+            {
+                tempPosition.Y += updatedBallSpeed;
+                if (!map.CheckCollision(new Rectangle((int)tempPosition.X, (int)tempPosition.Y + 31, 32, 32)))
+                    newPosition.Y += updatedBallSpeed;
+            }
+            if (keyPressed.IsKeyDown(Keys.A))
+            {
+                tempPosition.X -= updatedBallSpeed;
+                if (!map.CheckCollision(new Rectangle((int)tempPosition.X, (int)tempPosition.Y, 32, 32)))
+                    newPosition.X -= updatedBallSpeed;
+            }
+            if (keyPressed.IsKeyDown(Keys.D))
+            {
+                tempPosition.X += updatedBallSpeed;
+                if (!map.CheckCollision(new Rectangle((int)tempPosition.X + 31, (int)tempPosition.Y, 32, 32)))
+                    newPosition.X += updatedBallSpeed;
+            }
+
+            ballPosition = newPosition;
 
             ballPosition.X = MathHelper.Clamp(ballPosition.X, 0, graphics.PreferredBackBufferWidth - ballObject.Width);
             ballPosition.Y = MathHelper.Clamp(ballPosition.Y, 0, graphics.PreferredBackBufferHeight - ballObject.Height);
