@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Cryptic Catacombs",
+    "\\Cryptic Catacombs\\Content"
   ],
-  "SelectedNode": "\\C:\\Users\\trist\\Desktop\\GitHubCapstone",
+  "SelectedNode": "\\Cryptic Catacombs\\Map.cs",
   "PreviewInSolutionExplorer": false
 }
