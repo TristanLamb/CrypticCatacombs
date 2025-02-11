@@ -10,7 +10,28 @@ namespace Cryptic_Catacombs
         private Texture2D ballObject;
         private Vector2 ballPosition;
         private float ballSpeed;
+        private int health;
         public Rectangle BoundingBox => new Rectangle((int)ballPosition.X, (int)ballPosition.Y, 32, 32);
+
+
+        public Player()
+        {
+            health = 100;
+        }
+        public int Health => health;
+
+
+        public void TakeDamage(int damage)
+        {
+            health -= damage; // subtracts the damage taken from health
+            if (health < 0) health = 0; // ensure health doesn't go below zero (Change Later for animation)
+        }
+
+
+
+
+
+
 
         public void LoadContent(ContentManager content)
         {
@@ -18,6 +39,9 @@ namespace Cryptic_Catacombs
             ballPosition = new Vector2(400, 300);
             ballSpeed = 100f;
         }
+
+
+
 
         public void Update(GameTime gameTime, GraphicsDeviceManager graphics, Map map)
         {
@@ -57,6 +81,9 @@ namespace Cryptic_Catacombs
             ballPosition.X = MathHelper.Clamp(ballPosition.X, 0, graphics.PreferredBackBufferWidth - ballObject.Width);
             ballPosition.Y = MathHelper.Clamp(ballPosition.Y, 0, graphics.PreferredBackBufferHeight - ballObject.Height);
         }
+
+
+
 
         public void Draw(SpriteBatch spriteBatch)
         {
