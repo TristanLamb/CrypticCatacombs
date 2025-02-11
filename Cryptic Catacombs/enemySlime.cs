@@ -112,9 +112,19 @@ namespace Cryptic_Catacombs
 
 			//debugging
 			Debug.WriteLine($"Drawing Frame: {currentFrame}, Source Rect: {sourceRectangle}");
+			float scale = 1.75f;
+			spriteBatch.Draw(
+				enemyTexture,             // Texture to draw
+				position,                 // Position on the screen
+				sourceRectangle,          // Portion of the texture to draw
+				Color.White,              // Color (no tint)
+				0f,                       // Rotation (no rotation)
+				Vector2.Zero,             // Origin (top-left corner)
+				scale,                    // Scale factor
+				SpriteEffects.None,       // No flip effects
+				0f                        // Layer depth (default)
+				);
 
-			spriteBatch.Draw(enemyTexture, position, sourceRectangle, Color.White);
-			
 		}
 	}
 }

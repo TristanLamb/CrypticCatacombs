@@ -9,9 +9,11 @@
     <File>C:/Users/Tristan Lambert/Desktop/Dungeon Crawler/CrypticCatacombs/Cryptic Catacombs/Content/door.png</File>
     <File>C:/Users/Tristan Lambert/Desktop/Dungeon Crawler/CrypticCatacombs/Cryptic Catacombs/Content/floor.png</File>
     <File>C:/Users/Tristan Lambert/Desktop/Dungeon Crawler/CrypticCatacombs/Cryptic Catacombs/Content/slimeWalk.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/Dungeon Crawler/CrypticCatacombs/Cryptic Catacombs/Content/swordsmanIdle.png</File>
     <File>C:/Users/Tristan Lambert/Desktop/Dungeon Crawler/CrypticCatacombs/Cryptic Catacombs/Content/wall.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

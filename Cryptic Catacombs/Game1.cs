@@ -23,6 +23,8 @@ namespace Cryptic_Catacombs
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
+            _graphics.PreferredBackBufferWidth = 1200;
+            _graphics.PreferredBackBufferHeight = 720;
             _graphics.ApplyChanges();
 
             Content.RootDirectory = "Content";

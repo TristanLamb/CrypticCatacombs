@@ -7,11 +7,20 @@ namespace Cryptic_Catacombs
 {
     public class Player
     {
-        private Texture2D ballObject;
-        private Vector2 ballPosition;
-        private float ballSpeed;
+        private Texture2D playerTexture;
+        private Vector2 playerPosition;
+        private float playerSpeed;
         private int health;
-        public Rectangle BoundingBox => new Rectangle((int)ballPosition.X, (int)ballPosition.Y, 32, 32);
+        public Rectangle BoundingBox => new Rectangle((int)playerPosition.X, (int)playerPosition.Y, 32, 32);
+
+        // Animation
+        private int frameWidth;
+        private int frameHeight; 
+        private int currentFrame;
+        private int totalFrames;
+        private float timePerFrame;
+        private float timeElapsed;
+
 
 
         public Player()
@@ -30,14 +39,19 @@ namespace Cryptic_Catacombs
 
 
 
-
-
-
         public void LoadContent(ContentManager content)
         {
-            ballObject = content.Load<Texture2D>("ball");
-            ballPosition = new Vector2(400, 300);
-            ballSpeed = 100f;
+            playerTexture = content.Load<Texture2D>("swordsmanIdle");
+            playerPosition = new Vector2(300, 300);
+            playerSpeed = 100f;
+
+            //animation
+            frameWidth = playerTexture.Width / 6; 
+            frameHeight = playerTexture.Height; 
+            currentFrame = 0;
+            totalFrames = 5;  
+            timePerFrame = 0.2f; 
+            timeElapsed = 0f;
         }
 
 
@@ -46,40 +60,49 @@ namespace Cryptic_Catacombs
         public void Update(GameTime gameTime, GraphicsDeviceManager graphics, Map map)
         {
             KeyboardState keyPressed = Keyboard.GetState();
-            float updatedBallSpeed = ballSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            Vector2 newPosition = ballPosition;
+            float updatedPlayerSpeed = playerSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            Vector2 newPosition = playerPosition;
             
-            Vector2 tempPosition = ballPosition;
+            Vector2 tempPosition = playerPosition;
 
             if (keyPressed.IsKeyDown(Keys.W))
             {
-                tempPosition.Y -= updatedBallSpeed;
+                tempPosition.Y -= updatedPlayerSpeed;
                 if (!map.CheckCollision(new Rectangle((int)tempPosition.X, (int)tempPosition.Y, 32, 32)))
-                    newPosition.Y -= updatedBallSpeed;
+                    newPosition.Y -= updatedPlayerSpeed;
             }
             if (keyPressed.IsKeyDown(Keys.S))
             {
-                tempPosition.Y += updatedBallSpeed;
+                tempPosition.Y += updatedPlayerSpeed;
                 if (!map.CheckCollision(new Rectangle((int)tempPosition.X, (int)tempPosition.Y + 31, 32, 32)))
-                    newPosition.Y += updatedBallSpeed;
+                    newPosition.Y += updatedPlayerSpeed;
             }
             if (keyPressed.IsKeyDown(Keys.A))
             {
-                tempPosition.X -= updatedBallSpeed;
+                tempPosition.X -= updatedPlayerSpeed;
                 if (!map.CheckCollision(new Rectangle((int)tempPosition.X, (int)tempPosition.Y, 32, 32)))
-                    newPosition.X -= updatedBallSpeed;
+                    newPosition.X -= updatedPlayerSpeed;
             }
             if (keyPressed.IsKeyDown(Keys.D))
             {
-                tempPosition.X += updatedBallSpeed;
-                if (!map.CheckCollision(new Rectangle((int)tempPosition.X + 31, (int)tempPosition.Y, 32, 32)))
-                    newPosition.X += updatedBallSpeed;
+                tempPosition.X += updatedPlayerSpeed;
+                if (!map.CheckCollision(new Rectangle((int)tempPosition.X, (int)tempPosition.Y, 32, 32)))
+                    newPosition.X += updatedPlayerSpeed;
             }
 
-            ballPosition = newPosition;
+            playerPosition = newPosition;
 
-            ballPosition.X = MathHelper.Clamp(ballPosition.X, 0, graphics.PreferredBackBufferWidth - ballObject.Width);
-            ballPosition.Y = MathHelper.Clamp(ballPosition.Y, 0, graphics.PreferredBackBufferHeight - ballObject.Height);
+            playerPosition.X = MathHelper.Clamp(playerPosition.X, 0, graphics.PreferredBackBufferWidth - 32);
+            playerPosition.Y = MathHelper.Clamp(playerPosition.Y, 0, graphics.PreferredBackBufferHeight - 32);
+
+
+            //animation
+            timeElapsed += (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (timeElapsed >= timePerFrame)
+            {
+                currentFrame = (currentFrame + 1) % totalFrames;
+                timeElapsed = 0f;
+            }
         }
 
 
@@ -87,7 +110,19 @@ namespace Cryptic_Catacombs
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(ballObject, ballPosition, Color.White);
+            Rectangle sourceRectangle = new Rectangle(currentFrame * frameWidth, 0, frameWidth, frameHeight);
+            float scale = 1.75f;
+            spriteBatch.Draw(
+                playerTexture,            // Texture to draw
+                playerPosition,           // Position on the screen
+                sourceRectangle,          // Portion of the texture to draw
+                Color.White,              // Color (no tint)
+                0f,                       // Rotation (no rotation)
+                Vector2.Zero,             // Origin (top-left corner)
+                scale,                    // Scale factor
+                SpriteEffects.None,       // No flip effects
+                0f                        // Layer depth (default)
+                );
         }
     }
 }
