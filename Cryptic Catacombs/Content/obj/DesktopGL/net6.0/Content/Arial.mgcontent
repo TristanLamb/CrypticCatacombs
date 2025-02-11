@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/trist/Desktop/FinalGroupCapstone/Cryptic Catacombs/Cryptic Catacombs/Content/Arial.spritefont</SourceFile>
-  <SourceTime>2022-07-26T07:44:10-04:00</SourceTime>
-  <DestFile>C:/Users/trist/Desktop/FinalGroupCapstone/Cryptic Catacombs/Cryptic Catacombs/Content/bin/DesktopGL/Content/Arial.xnb</DestFile>
-  <DestTime>2025-02-04T15:36:52.0816856-05:00</DestTime>
+  <SourceFile>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/Arial.spritefont</SourceFile>
+  <SourceTime>2025-02-07T14:05:44.472054-05:00</SourceTime>
+  <DestFile>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/bin/DesktopGL/Content/Arial.xnb</DestFile>
+  <DestTime>2025-02-09T14:43:48.047616-05:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2022-07-26T07:44:56-04:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>
