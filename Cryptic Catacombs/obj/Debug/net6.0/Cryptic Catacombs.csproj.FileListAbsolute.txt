@@ -22,10 +22,9 @@ C:\Users\trist\Desktop\DungeonCrawler\CrypticCatacombs\Cryptic Catacombs\obj\Deb
 C:\Users\trist\Desktop\DungeonCrawler\CrypticCatacombs\Cryptic Catacombs\obj\Debug\net6.0\Cryptic Catacombs.AssemblyInfoInputs.cache
 C:\Users\trist\Desktop\DungeonCrawler\CrypticCatacombs\Cryptic Catacombs\obj\Debug\net6.0\Cryptic Catacombs.AssemblyInfo.cs
 C:\Users\trist\Desktop\DungeonCrawler\CrypticCatacombs\Cryptic Catacombs\obj\Debug\net6.0\Cryptic Catacombs.csproj.CoreCompileInputs.cache
-C:\Users\trist\Desktop\DungeonCrawler\CrypticCatacombs\Cryptic Catacombs\obj\Debug\net6.0\Cryptic Catacombs.sourcelink.json
-C:\Users\trist\Desktop\DungeonCrawler\CrypticCatacombs\Cryptic Catacombs\obj\Debug\net6.0\Cryptic .33961E4C.Up2Date
 C:\Users\trist\Desktop\DungeonCrawler\CrypticCatacombs\Cryptic Catacombs\obj\Debug\net6.0\Cryptic Catacombs.dll
 C:\Users\trist\Desktop\DungeonCrawler\CrypticCatacombs\Cryptic Catacombs\obj\Debug\net6.0\refint\Cryptic Catacombs.dll
 C:\Users\trist\Desktop\DungeonCrawler\CrypticCatacombs\Cryptic Catacombs\obj\Debug\net6.0\Cryptic Catacombs.pdb
 C:\Users\trist\Desktop\DungeonCrawler\CrypticCatacombs\Cryptic Catacombs\obj\Debug\net6.0\Cryptic Catacombs.genruntimeconfig.cache
 C:\Users\trist\Desktop\DungeonCrawler\CrypticCatacombs\Cryptic Catacombs\obj\Debug\net6.0\ref\Cryptic Catacombs.dll
+C:\Users\trist\Desktop\DungeonCrawler\CrypticCatacombs\Cryptic Catacombs\obj\Debug\net6.0\Cryptic Catacombs.csproj.CopyComplete

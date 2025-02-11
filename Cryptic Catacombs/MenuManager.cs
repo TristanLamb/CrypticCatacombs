@@ -39,7 +39,7 @@ namespace Cryptic_Catacombs
         private void DrawPauseMenu(SpriteBatch spriteBatch)
         {
             spriteBatch.DrawString(font, "PAUSED", new Vector2(350, 100), Color.White);
-            spriteBatch.DrawString(font, "Press ESC or ENTER to Resume", new Vector2(250, 200), Color.White);
+            spriteBatch.DrawString(font, "Press ENTER to Resume", new Vector2(250, 200), Color.White);
         }
 
         private void DrawGameOverMenu(SpriteBatch spriteBatch)
