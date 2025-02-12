@@ -33,8 +33,10 @@ C:\Users\Tristan Lambert\Desktop\Dungeon Crawler\CrypticCatacombs\Cryptic Cataco
 C:\Users\Tristan Lambert\Desktop\Dungeon Crawler\CrypticCatacombs\Cryptic Catacombs\bin\x64\Debug\net6.0\net6.0\Content\door.xnb
 C:\Users\Tristan Lambert\Desktop\Dungeon Crawler\CrypticCatacombs\Cryptic Catacombs\bin\x64\Debug\net6.0\net6.0\Content\floor.xnb
 C:\Users\Tristan Lambert\Desktop\Dungeon Crawler\CrypticCatacombs\Cryptic Catacombs\bin\x64\Debug\net6.0\net6.0\Content\Slime-Walk.png
+C:\Users\Tristan Lambert\Desktop\Dungeon Crawler\CrypticCatacombs\Cryptic Catacombs\bin\x64\Debug\net6.0\net6.0\Content\slimeBasicAttack.xnb
 C:\Users\Tristan Lambert\Desktop\Dungeon Crawler\CrypticCatacombs\Cryptic Catacombs\bin\x64\Debug\net6.0\net6.0\Content\slimeWalk.xnb
 C:\Users\Tristan Lambert\Desktop\Dungeon Crawler\CrypticCatacombs\Cryptic Catacombs\bin\x64\Debug\net6.0\net6.0\Content\swordsmanIdle.xnb
+C:\Users\Tristan Lambert\Desktop\Dungeon Crawler\CrypticCatacombs\Cryptic Catacombs\bin\x64\Debug\net6.0\net6.0\Content\swordsmanWalking.xnb
 C:\Users\Tristan Lambert\Desktop\Dungeon Crawler\CrypticCatacombs\Cryptic Catacombs\bin\x64\Debug\net6.0\net6.0\Content\wall.xnb
 C:\Users\Tristan Lambert\Desktop\Dungeon Crawler\CrypticCatacombs\Cryptic Catacombs\bin\x64\Debug\net6.0\net6.0\Cryptic Catacombs.exe
 C:\Users\Tristan Lambert\Desktop\Dungeon Crawler\CrypticCatacombs\Cryptic Catacombs\bin\x64\Debug\net6.0\net6.0\Cryptic Catacombs.deps.json

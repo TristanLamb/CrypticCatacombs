@@ -7,7 +7,8 @@ namespace Cryptic_Catacombs
 {
     public class Player
     {
-        private Texture2D playerTexture;
+        private Texture2D playerIdleTexture;
+        private Texture2D playerWalkingTexture;
         private Vector2 playerPosition;
         private float playerSpeed;
         private int health;
@@ -20,6 +21,8 @@ namespace Cryptic_Catacombs
         private int totalFrames;
         private float timePerFrame;
         private float timeElapsed;
+        private bool isWalking;
+        private bool isMovingRight;
 
 
 
@@ -33,7 +36,10 @@ namespace Cryptic_Catacombs
         public void TakeDamage(int damage)
         {
             health -= damage; // subtracts the damage taken from health
-            if (health < 0) health = 0; // ensure health doesn't go below zero (Change Later for animation)
+            if (health < 0)
+            {
+                health = 0; // ensure health doesn't go below zero (Change Later for animation)
+            }
         }
 
 
@@ -41,17 +47,29 @@ namespace Cryptic_Catacombs
 
         public void LoadContent(ContentManager content)
         {
-            playerTexture = content.Load<Texture2D>("swordsmanIdle");
+            playerIdleTexture = content.Load<Texture2D>("swordsmanIdle");
+            playerWalkingTexture = content.Load<Texture2D>("swordsmanWalking");
             playerPosition = new Vector2(300, 300);
             playerSpeed = 100f;
 
             //animation
-            frameWidth = playerTexture.Width / 6; 
-            frameHeight = playerTexture.Height; 
+            if (playerIdleTexture.Name.Contains("Idle"))
+            {
+                frameWidth = playerIdleTexture.Width / 6;
+                totalFrames = 5;
+            }
+            else if (playerWalkingTexture.Name.Contains("Walking"))
+            {
+                frameWidth = playerWalkingTexture.Width / 8;
+                totalFrames = 7;
+            }
+
+            frameHeight = playerIdleTexture.Height; 
             currentFrame = 0;
-            totalFrames = 5;  
             timePerFrame = 0.2f; 
             timeElapsed = 0f;
+
+            isWalking = false;
         }
 
 
@@ -64,30 +82,45 @@ namespace Cryptic_Catacombs
             Vector2 newPosition = playerPosition;
             
             Vector2 tempPosition = playerPosition;
+            bool moving = false;
 
             if (keyPressed.IsKeyDown(Keys.W))
             {
                 tempPosition.Y -= updatedPlayerSpeed;
                 if (!map.CheckCollision(new Rectangle((int)tempPosition.X, (int)tempPosition.Y, 32, 32)))
                     newPosition.Y -= updatedPlayerSpeed;
+                moving = true;
             }
             if (keyPressed.IsKeyDown(Keys.S))
             {
                 tempPosition.Y += updatedPlayerSpeed;
                 if (!map.CheckCollision(new Rectangle((int)tempPosition.X, (int)tempPosition.Y + 31, 32, 32)))
                     newPosition.Y += updatedPlayerSpeed;
+                moving = true;
             }
             if (keyPressed.IsKeyDown(Keys.A))
             {
                 tempPosition.X -= updatedPlayerSpeed;
                 if (!map.CheckCollision(new Rectangle((int)tempPosition.X, (int)tempPosition.Y, 32, 32)))
                     newPosition.X -= updatedPlayerSpeed;
+                moving = true;
+                isMovingRight = false;
             }
             if (keyPressed.IsKeyDown(Keys.D))
             {
                 tempPosition.X += updatedPlayerSpeed;
                 if (!map.CheckCollision(new Rectangle((int)tempPosition.X, (int)tempPosition.Y, 32, 32)))
                     newPosition.X += updatedPlayerSpeed;
+                moving = true;
+                isMovingRight = true;
+            }
+            if (moving)
+            {
+                isWalking = true;
+            }
+            else
+            {
+                isWalking = false;
             }
 
             playerPosition = newPosition;
@@ -110,17 +143,37 @@ namespace Cryptic_Catacombs
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            Texture2D currentTexture;
+            if (isWalking)
+            {
+                currentTexture = playerWalkingTexture;
+            }
+            else
+            {
+                currentTexture = playerIdleTexture;
+            }
+
+            SpriteEffects spriteEffect;
+            if (isMovingRight)
+            {
+                spriteEffect = SpriteEffects.None;
+            }
+            else
+            {
+                spriteEffect = SpriteEffects.FlipHorizontally;
+            }
+
             Rectangle sourceRectangle = new Rectangle(currentFrame * frameWidth, 0, frameWidth, frameHeight);
             float scale = 1.75f;
             spriteBatch.Draw(
-                playerTexture,            // Texture to draw
+                currentTexture,           // Texture to draw
                 playerPosition,           // Position on the screen
                 sourceRectangle,          // Portion of the texture to draw
                 Color.White,              // Color (no tint)
                 0f,                       // Rotation (no rotation)
                 Vector2.Zero,             // Origin (top-left corner)
                 scale,                    // Scale factor
-                SpriteEffects.None,       // No flip effects
+                spriteEffect,             // No flip effects
                 0f                        // Layer depth (default)
                 );
         }

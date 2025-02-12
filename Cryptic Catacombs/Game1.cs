@@ -118,10 +118,17 @@ namespace Cryptic_Catacombs
             if (_gameStateManager.CurrentGameState == GameState.Playing)
             {
                 _map.Draw(_spriteBatch);
+                
+                Texture2D rectangleTexture = new Texture2D(GraphicsDevice, 1, 1);
+                //showing hitboxes rectangleTexture.SetData(new Color[] { Color.Green });
+                //showing hitboxes _spriteBatch.Draw(rectangleTexture, _player.BoundingBox, Color.Green);
+
                 _player.Draw(_spriteBatch);
+
                 foreach (var enemy in _enemies)
                 {
-                    enemy.Draw(_spriteBatch); // Draw each slime
+                    //showing hitboxes _spriteBatch.Draw(rectangleTexture, enemy.slimeBoundingBox, Color.Blue);
+                    enemy.Draw(_spriteBatch);
                 }
             }
             else
