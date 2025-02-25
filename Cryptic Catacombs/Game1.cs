@@ -14,12 +14,13 @@ namespace Cryptic_Catacombs
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        private SpriteFont _font;
         private GameStateManager _gameStateManager;
         private Player _player;
         private MenuManager _menuManager;
         private Map _map;
         private List<enemySlime> _enemies;
-
+        private Timer _timer;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -37,6 +38,7 @@ namespace Cryptic_Catacombs
             _player = new Player();
             _enemies = new List<enemySlime>();
             _menuManager = new MenuManager();
+            _timer = new Timer();
 
             //spawning enemies
             SpawnEnemy(new Vector2(500, 300), 10, 50f);
@@ -50,6 +52,7 @@ namespace Cryptic_Catacombs
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             _player.LoadContent(Content);
             _menuManager.LoadContent(Content);
+            _font = Content.Load<SpriteFont>("Arial");
 
             foreach (var enemy in _enemies)
             {
@@ -98,6 +101,11 @@ namespace Cryptic_Catacombs
             if (_gameStateManager.CurrentGameState == GameState.Playing)
             {
                 _player.Update(gameTime, _graphics, _map);
+                _timer.Start();
+            }
+            else if (_gameStateManager.CurrentGameState == GameState.Paused)
+            {
+                _timer.Pause();
             }
 
             //debugging
@@ -107,6 +115,11 @@ namespace Cryptic_Catacombs
                 enemy.Update(gameTime, _player); // Update each slime
             }
 
+            if (_gameStateManager.CurrentGameState == GameState.Playing)
+            {
+                _timer.Update(gameTime);
+            }
+            
             base.Update(gameTime);
         }
 
@@ -136,6 +149,8 @@ namespace Cryptic_Catacombs
                 _menuManager.Draw(_spriteBatch, _gameStateManager.CurrentGameState);
             }
             
+            _spriteBatch.DrawString(_font, _timer.GetFormattedTime(), new Vector2(10, 10), Color.White);
+
             _spriteBatch.End();
             base.Draw(gameTime);
         }
