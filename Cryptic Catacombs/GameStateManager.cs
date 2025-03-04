@@ -42,7 +42,7 @@ namespace Cryptic_Catacombs
                     break;
 
                 case GameState.Paused:
-                    if (keyPressed.IsKeyDown(Keys.Escape) || keyPressed.IsKeyDown(Keys.Enter))
+                    if (keyPressed.IsKeyDown(Keys.Enter))
                     {
                         CurrentGameState = GameState.Playing;
                     }
