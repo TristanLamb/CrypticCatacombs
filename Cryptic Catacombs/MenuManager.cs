@@ -10,7 +10,7 @@ namespace Cryptic_Catacombs
 
         public void LoadContent(ContentManager content)
         {
-            font = content.Load<SpriteFont>("arial");
+            font = content.Load<SpriteFont>("Arial");
         }
 
         public void Draw(SpriteBatch spriteBatch, GameState gameState)

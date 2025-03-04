@@ -4,15 +4,19 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Tristan Lambert/Desktop/Dungeon Crawler/CrypticCatacombs/Cryptic Catacombs/Content/Arial.spritefont</File>
-    <File>C:/Users/Tristan Lambert/Desktop/Dungeon Crawler/CrypticCatacombs/Cryptic Catacombs/Content/ball.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/Dungeon Crawler/CrypticCatacombs/Cryptic Catacombs/Content/door.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/Dungeon Crawler/CrypticCatacombs/Cryptic Catacombs/Content/floor.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/Dungeon Crawler/CrypticCatacombs/Cryptic Catacombs/Content/slimeBasicAttack.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/Dungeon Crawler/CrypticCatacombs/Cryptic Catacombs/Content/slimeWalk.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/Dungeon Crawler/CrypticCatacombs/Cryptic Catacombs/Content/swordsmanIdle.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/Dungeon Crawler/CrypticCatacombs/Cryptic Catacombs/Content/swordsmanWalking.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/Dungeon Crawler/CrypticCatacombs/Cryptic Catacombs/Content/wall.png</File>
+    <File>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/Archer-Idle.png</File>
+    <File>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/Archer-Walk.png</File>
+    <File>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/Arial.spritefont</File>
+    <File>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/ball.png</File>
+    <File>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/door.png</File>
+    <File>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/floor.png</File>
+    <File>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/slimeBasicAttack.png</File>
+    <File>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/slimeWalk.png</File>
+    <File>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/swordsmanIdle.png</File>
+    <File>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/swordsmanWalking.png</File>
+    <File>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/wall.png</File>
+    <File>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/Wizard-Idle.png</File>
+    <File>C:/Users/morgr/Capstone/DungeonCrawler/Cryptic Catacombs/Content/Wizard-Walk.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
@@ -21,6 +25,10 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File>Swordsman-Idle.png</File>
+    <File>Swordsman-Walk.png</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

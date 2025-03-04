@@ -5,6 +5,7 @@ namespace Cryptic_Catacombs
     public enum GameState
     {
         MainMenu,
+        ClassSelection,
         Playing,
         Paused,
         GameOver
@@ -12,8 +13,8 @@ namespace Cryptic_Catacombs
 
     public class GameStateManager
     {
-        public GameState CurrentGameState { get; private set; }
-
+        public static GameState CurrentGameState { get; set; } = GameState.MainMenu;
+        public static string SelectedClass { get; set; } = "Melee";
         public GameStateManager()
         {
             CurrentGameState = GameState.MainMenu;
@@ -24,13 +25,31 @@ namespace Cryptic_Catacombs
             switch (CurrentGameState)
             {
                 case GameState.MainMenu:
-                    if (keyPressed.IsKeyDown(Keys.Enter))
+                    if (CurrentGameState == GameState.MainMenu && keyPressed.IsKeyDown(Keys.Enter))
                     {
-                        CurrentGameState = GameState.Playing;
+                        CurrentGameState = GameState.ClassSelection;
                     }
                     if (keyPressed.IsKeyDown(Keys.Escape))
                     {
                         game.Exit();
+                    }
+                    break;
+
+                case GameState.ClassSelection:
+                    if (keyPressed.IsKeyDown(Keys.M))
+                    {
+                        SelectedClass = "Melee";
+                        CurrentGameState = GameState.Playing;
+                    }
+                    if (keyPressed.IsKeyDown(Keys.R))
+                    {
+                        SelectedClass = "Range";
+                        CurrentGameState = GameState.Playing;
+                    }
+                    if (keyPressed.IsKeyDown(Keys.W))
+                    {
+                        SelectedClass = "Magic";
+                        CurrentGameState = GameState.Playing;
                     }
                     break;
 

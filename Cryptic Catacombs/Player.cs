@@ -5,21 +5,22 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Cryptic_Catacombs
 {
-    public class Player
+    public abstract class Player
     {
-        private Texture2D playerIdleTexture;
-        private Texture2D playerWalkingTexture;
+        protected Texture2D playerIdleTexture;
+        protected Texture2D playerWalkingTexture;
         private Vector2 playerPosition;
-        private float playerSpeed;
-        private int health;
+        protected float playerSpeed;
+        protected int health;
         public Rectangle BoundingBox => new Rectangle((int)playerPosition.X, (int)playerPosition.Y, 32, 32);
-
+        public int Health => health;
+        
         // Animation
-        private int frameWidth;
-        private int frameHeight; 
+        private int frameWidth = 0;
+        private int frameHeight = 0; 
         private int currentFrame;
-        private int totalFrames;
-        private float timePerFrame;
+        private int totalFrames = 0;
+        private float timePerFrame = 0;
         private float timeElapsed;
         private bool isWalking;
         private bool isMovingRight;
@@ -29,11 +30,10 @@ namespace Cryptic_Catacombs
         public Player()
         {
             health = 100;
+            playerPosition = new Vector2(300, 300);
         }
-        public int Health => health;
 
-
-        public void TakeDamage(int damage)
+        public virtual void TakeDamage(int damage)
         {
             health -= damage; // subtracts the damage taken from health
             if (health < 0)
@@ -42,45 +42,13 @@ namespace Cryptic_Catacombs
             }
         }
 
+        public abstract void LoadContent(ContentManager content);
 
-
-
-        public void LoadContent(ContentManager content)
-        {
-            playerIdleTexture = content.Load<Texture2D>("swordsmanIdle");
-            playerWalkingTexture = content.Load<Texture2D>("swordsmanWalking");
-            playerPosition = new Vector2(300, 300);
-            playerSpeed = 100f;
-
-            //animation
-            if (playerIdleTexture.Name.Contains("Idle"))
-            {
-                frameWidth = playerIdleTexture.Width / 6;
-                totalFrames = 5;
-            }
-            else if (playerWalkingTexture.Name.Contains("Walking"))
-            {
-                frameWidth = playerWalkingTexture.Width / 8;
-                totalFrames = 7;
-            }
-
-            frameHeight = playerIdleTexture.Height; 
-            currentFrame = 0;
-            timePerFrame = 0.2f; 
-            timeElapsed = 0f;
-
-            isWalking = false;
-        }
-
-
-
-
-        public void Update(GameTime gameTime, GraphicsDeviceManager graphics, Map map)
+        public virtual void Update(GameTime gameTime, GraphicsDeviceManager graphics, Map map)
         {
             KeyboardState keyPressed = Keyboard.GetState();
             float updatedPlayerSpeed = playerSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
             Vector2 newPosition = playerPosition;
-            
             Vector2 tempPosition = playerPosition;
             bool moving = false;
 
@@ -133,7 +101,14 @@ namespace Cryptic_Catacombs
             timeElapsed += (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (timeElapsed >= timePerFrame)
             {
-                currentFrame = (currentFrame + 1) % totalFrames;
+                if (totalFrames > 0)
+                {
+                    currentFrame = (currentFrame + 1) % totalFrames;
+                }
+                else
+                {
+                    currentFrame = 0;
+                }
                 timeElapsed = 0f;
             }
         }
