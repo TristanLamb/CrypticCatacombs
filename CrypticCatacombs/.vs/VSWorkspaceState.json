@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Content",
+    "\\Content\\2d",
+    "\\Content\\2d\\Projectiles",
+    "\\Source",
+    "\\Source\\Engine",
+    "\\Source\\GamePlay",
+    "\\Source\\GamePlay\\World",
+    "\\Source\\GamePlay\\World\\Projectiles",
+    "\\Source\\GamePlay\\World\\Units"
+  ],
+  "SelectedNode": "\\Source\\GamePlay\\World\\Units\\Swordsman.cs",
+  "PreviewInSolutionExplorer": false
+}
