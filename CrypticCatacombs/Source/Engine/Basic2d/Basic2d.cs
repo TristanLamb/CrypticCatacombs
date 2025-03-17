@@ -12,7 +12,7 @@ namespace CrypticCatacombs
     {
         public float rotation;
 
-        public Vector2 pos, dims, frameSize;
+        public Vector2 pos, dims, frameSize, updateOffset;
 
         public Texture2D myModel;
         public Basic2d(string PATH, Vector2 POS, Vector2 DIMS)
@@ -26,10 +26,51 @@ namespace CrypticCatacombs
 
         public virtual void Update(Vector2 OFFSET)
         {
+            updateOffset = OFFSET;
+		}
 
+		//more resource heavy hover method (pixels)
+		public virtual bool Hover(Vector2 OFFSET)
+        {
+			return HoverImg(OFFSET);
         }
 
-        public virtual void Draw(Vector2 OFFSET)
+		public virtual bool HoverImg(Vector2 OFFSET)
+		{
+			//Vector2 mousePos = Globals.mouse.newMousePos;
+			Vector2 buttonPos = pos + OFFSET;
+			Vector2 mousePos = new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y);
+			//System.Diagnostics.Debug.WriteLine($"Mouse: {mousePos} | Button Pos: {buttonPos} | Size: {dims}");
+
+
+			if (mousePos.X >= (pos.X + OFFSET.X) - dims.X / 2 && mousePos.X <= (pos.X + OFFSET.X) + dims.X / 2 && mousePos.Y >= (pos.Y + OFFSET.Y) - dims.Y / 2 && mousePos.Y <= (pos.Y + OFFSET.Y) + dims.Y / 2)
+			{
+				//System.Diagnostics.Debug.WriteLine("Hover detected!");
+				return true;
+			}
+
+			return false;
+		}
+
+
+		public virtual void Draw()
+		{
+			if (myModel != null)
+			{
+				Globals.spriteBatch.Draw(
+					myModel,
+					new Rectangle((int)(pos.X + updateOffset.X), (int)(pos.Y + updateOffset.Y), (int)dims.X, (int)dims.Y),
+					null,
+					Color.White, //tint
+					rotation, //rotation
+					new Microsoft.Xna.Framework.Vector2(myModel.Bounds.Width / 2, myModel.Bounds.Height / 2),
+					new SpriteEffects(),
+					0 //layer depth
+					);
+			}
+		}
+
+		public virtual void Draw(Vector2 OFFSET)
         {
             if(myModel != null)
             {

@@ -4,20 +4,26 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/door.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/floor.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/wall.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/circle.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/CursorArrow.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/shade.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/solid.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs/CrypticCatacombs/Content/2d/Projectiles/fireball.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/Mobs/SlimePng.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/swordsmanIdle.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/WizardPng.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs/CrypticCatacombs/Content/Fonts/Arial16.spritefont</File>
+    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs - Copy (2)/CrypticCatacombs/Content/2d/Backgrounds/CharSelectionBkg.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs - Copy (2)/CrypticCatacombs/Content/2d/Backgrounds/MainMenu.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs - Copy (2)/CrypticCatacombs/Content/2d/Map/door.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs - Copy (2)/CrypticCatacombs/Content/2d/Map/floor.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs - Copy (2)/CrypticCatacombs/Content/2d/Map/wall.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs - Copy (2)/CrypticCatacombs/Content/2d/Misc/circle.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs - Copy (2)/CrypticCatacombs/Content/2d/Misc/CursorArrow.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs - Copy (2)/CrypticCatacombs/Content/2d/Misc/shade.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs - Copy (2)/CrypticCatacombs/Content/2d/Misc/SimpleButton.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs - Copy (2)/CrypticCatacombs/Content/2d/Misc/solid.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs - Copy (2)/CrypticCatacombs/Content/2d/Projectiles/fireball.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs - Copy (2)/CrypticCatacombs/Content/2d/Units/Mobs/SlimePng.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs - Copy (2)/CrypticCatacombs/Content/2d/Units/swordsmanIdle.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs - Copy (2)/CrypticCatacombs/Content/2d/Units/WizardPng.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs - Copy (2)/CrypticCatacombs/Content/Fonts/Arial16.spritefont</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using static System.Windows.Forms.AxHost;
 
 namespace CrypticCatacombs;
 
@@ -17,11 +18,11 @@ public class Main : Game
     private GraphicsDeviceManager graphics;
     private SpriteBatch _spriteBatch;
 
-    GamePlay gamePlay;
 
     Basic2d cursor;
+	GamePlay gamePlay;
 
-    public Main()
+	public Main()
     {
         graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
@@ -53,14 +54,10 @@ public class Main : Game
         Globals.keyboard = new CustomKeyboard();
         Globals.mouse = new CustomMouseControls();
 
-		gamePlay = new GamePlay();
 
+        gamePlay = new GamePlay();
 
-
-
-
-
-    }
+	}
 
 
     protected override void Update(GameTime gameTime)
@@ -75,34 +72,53 @@ public class Main : Game
 
 
 
+		//System.Diagnostics.Debug.WriteLine($"Main Updating, gameState: {Globals.gameState}");
+
 
 		gamePlay.Update();
 
 
 
 
+		cursor.Update(new Vector2(Globals.mouse.newMousePos.X + cursor.dims.X/2, Globals.mouse.newMousePos.Y + cursor.dims.Y/2));
 
-        Globals.keyboard.UpdateOld();
+		Globals.keyboard.UpdateOld();
         Globals.mouse.UpdateOld();
 
         base.Update(gameTime);
     }
 
-    protected override void Draw(GameTime gameTime)
+
+    public virtual void ChangeGameState(object INFO)
+    {
+		System.Diagnostics.Debug.WriteLine($"Changing gameState from {Globals.gameState} to {Globals.ConvertToInt(INFO)}");
+		Globals.gameState = Globals.ConvertToInt(INFO);
+		System.Diagnostics.Debug.WriteLine($"Game State Changed: {Globals.gameState}");
+	}
+
+    public virtual void ExitGame(object INFO)
+	{
+		System.Environment.Exit(0);
+	}
+
+	protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
         Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
 
 
+
+
 		gamePlay.Draw();
+		
 
 
 
+		//cursor.Draw(new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y), new Vector2(0, 0), Color.White);
+		cursor.Draw();
 
-
-        cursor.Draw(new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y), new Vector2(0, 0), Color.White);
-        Globals.spriteBatch.End();
+		Globals.spriteBatch.End();
 
         base.Draw(gameTime);
     }

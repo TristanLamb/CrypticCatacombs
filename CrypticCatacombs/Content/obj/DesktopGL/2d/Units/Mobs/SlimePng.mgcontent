@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/Mobs/SlimePng.png</SourceFile>
+  <SourceFile>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs - Copy (2)/CrypticCatacombs/Content/2d/Units/Mobs/SlimePng.png</SourceFile>
   <SourceTime>2025-03-03T23:39:25.6282649-05:00</SourceTime>
-  <DestFile>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs/CrypticCatacombs/Content/bin/DesktopGL/2d/Units/Mobs/SlimePng.xnb</DestFile>
-  <DestTime>2025-03-04T07:43:09.6411212-05:00</DestTime>
+  <DestFile>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/CrypticCatacombs - Copy (2)/CrypticCatacombs/Content/bin/DesktopGL/2d/Units/Mobs/SlimePng.xnb</DestFile>
+  <DestTime>2025-03-16T18:52:30.5164589-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2024-08-16T13:05:56-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

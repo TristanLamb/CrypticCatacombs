@@ -17,15 +17,22 @@ namespace CrypticCatacombs
 
 	public class Globals
     {
-        public static int screenHeight, screenWidth;
+        public static int screenHeight, screenWidth, gameState = 0;
 
-        public static ContentManager content;  //helps load images
+		public static System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US"); //use english chars
+
+		public static ContentManager content;  //helps load images
         public static SpriteBatch spriteBatch; //helps draws images
 
         public static CustomKeyboard keyboard;
         public static CustomMouseControls mouse;
 
         public static GameTime gameTime; //keeping time between frames
+
+        public static int ConvertToInt(object INFO)
+        {
+            return Convert.ToInt32(INFO, culture);
+        }
 
         public static float GetDistance(Vector2 pos, Vector2 target)
         {

@@ -18,10 +18,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Content\bin\**" />
+    <EmbeddedResource Remove="Content\bin\**" />
+    <None Remove="Content\bin\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Content\2d\Backgrounds\CharSelectionBkg.png" />
+    <None Remove="Content\2d\Backgrounds\MainMenu.png" />
     <None Remove="Content\2d\Map\door.png" />
     <None Remove="Content\2d\Map\floor.png" />
     <None Remove="Content\2d\Map\wall.png" />
     <None Remove="Content\2d\Misc\CursorArrow.xnb" />
+    <None Remove="Content\2d\Misc\SimpleButton.png" />
     <None Remove="Content\2d\Projectiles\fireball.png" />
     <None Remove="Content\2d\Units\Mobs\SlimePng.png" />
     <None Remove="Content\Fonts\Arial16.spritefont" />
@@ -31,6 +40,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Content\2d\Backgrounds\CharSelectionBkg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Backgrounds\MainMenu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\2d\Map\door.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -38,6 +53,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\2d\Map\wall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Misc\SimpleButton.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\2d\Projectiles\fireball.png">

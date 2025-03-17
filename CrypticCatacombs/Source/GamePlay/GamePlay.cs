@@ -15,37 +15,67 @@ namespace CrypticCatacombs
 {
     public class GamePlay
     {
-        int gameState;
+		private MainMenu mainMenu;
+		private CharSelectionScreen charSelectionScreen;
+		private Dungeon dungeon;
 
-        Dungeon dungeon;
-
-        public GamePlay()
+		public GamePlay()
         {
-            gameState = 0; //game playing
+			mainMenu = new MainMenu(this);
+			charSelectionScreen = new CharSelectionScreen(this);
 
-            ResetDungeon(null);
+			ResetDungeon(null);
         }
 
 		public virtual void Update()
         {
-            if(gameState == 0)
-            {
-                dungeon.Update();
-            }
-        }
 
-        public virtual void ResetDungeon(object INFO)
+			//System.Diagnostics.Debug.WriteLine("Gameplay is updating!");
+			if (Globals.gameState == 0)
+			{
+				mainMenu.Update();
+			}
+			else if (Globals.gameState == 1)
+			{
+				charSelectionScreen.Update();
+			}
+			else if (Globals.gameState == 2)
+			{
+				dungeon.Update();
+			}
+		}
+
+		public void ChangeState(int newState)
+		{
+			Globals.gameState = newState;
+			System.Diagnostics.Debug.WriteLine($"GamePlay state changed to: {Globals.gameState}");
+		}
+
+		public virtual void ExitGame(object INFO)
+		{
+			Globals.gameState = 0;
+		}
+
+		public virtual void ResetDungeon(object INFO)
         {
             dungeon = new Dungeon(ResetDungeon);
         }
 
         public virtual void Draw()
         {
-            if(gameState == 0)
-            {
-                dungeon.Draw(Vector2.Zero);
-            }    
-        }
+			if (Globals.gameState == 0)
+			{
+				mainMenu.Draw();
+			}
+			else if (Globals.gameState == 1)
+			{
+				charSelectionScreen.Draw();
+			}
+			else if (Globals.gameState == 2)
+			{
+				dungeon.Draw(Vector2.Zero);
+			}
+		}
 
 
     }
