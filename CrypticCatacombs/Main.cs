@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using CrypticCatacombs;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -16,7 +18,7 @@ namespace CrypticCatacombs;
 public class Main : Game
 {
     private GraphicsDeviceManager graphics;
-    private SpriteBatch _spriteBatch;
+    private SpriteBatch spriteBatch;
 
 
     Basic2d cursor;
@@ -26,14 +28,16 @@ public class Main : Game
     {
         graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
-        //IsMouseVisible = true;
+		//IsMouseVisible = true;
 
-    }
+		Globals.appDataFilePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+	}
 
     protected override void Initialize()
     {
 
-        Globals.screenWidth = 1680;
+        Globals.screenWidth = 1674;
         Globals.screenHeight = 930;
         graphics.PreferredBackBufferWidth = Globals.screenWidth;
         graphics.PreferredBackBufferHeight = Globals.screenHeight;
@@ -47,16 +51,33 @@ public class Main : Game
         Globals.content = this.Content;
         Globals.spriteBatch = new SpriteBatch(GraphicsDevice);
 
+        Globals.save = new Save(1,"CrypticCatacombs"); 
 
-        cursor = new Basic2d("2d/Misc/CursorArrow", new Vector2(0, 0), new Vector2(24, 24));
+
+		cursor = new Basic2d("2d/Misc/CursorArrow", new Vector2(0, 0), new Vector2(24, 24));
 
 
         Globals.keyboard = new CustomKeyboard();
         Globals.mouse = new CustomMouseControls();
 
 
-        gamePlay = new GamePlay();
+		gamePlay = new GamePlay();
+		gamePlay.LoadContent(Content);
 
+
+        if(File.Exists(Globals.appDataFilePath + "\\" + Globals.save.gameName + "\\XML\\KeyBinds.xml"))
+        {
+            GameGlobals.keyBinds = new KeyBindList(Globals.save.GetFile("XML\\KeyBinds.xml"));
+		}
+		else
+        {
+            //Make File
+            XDocument keybindXML = XDocument.Parse("<Root><Keys><Key n=\"Move Left\"><value>A</value></Key><Key n=\"Move Right\"><value>D</value></Key><Key n=\"Move Up\"><value>W</value></Key><Key n=\"Move Down\"><value>S</value></Key></Keys></Root>");
+			//Save File
+            Globals.save.HandleSaveFormats(keybindXML, "KeyBinds.xml");
+			//Load File
+			GameGlobals.keyBinds = new KeyBindList(Globals.save.GetFile("XML\\KeyBinds.xml"));
+		}
 	}
 
 
@@ -69,7 +90,6 @@ public class Main : Game
         Globals.gameTime = gameTime;
         Globals.keyboard.Update();
         Globals.mouse.Update();
-
 
 
 		//System.Diagnostics.Debug.WriteLine($"Main Updating, gameState: {Globals.gameState}");
@@ -110,7 +130,7 @@ public class Main : Game
 
 
 
-		gamePlay.Draw();
+		gamePlay.Draw(Globals.spriteBatch);
 		
 
 

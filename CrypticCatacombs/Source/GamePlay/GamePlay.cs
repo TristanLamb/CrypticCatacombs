@@ -24,8 +24,14 @@ namespace CrypticCatacombs
 			mainMenu = new MainMenu(this);
 			charSelectionScreen = new CharSelectionScreen(this);
 
+
 			ResetDungeon(null);
         }
+
+		public void LoadContent(ContentManager content)
+		{
+			dungeon.LoadContent(content);
+		}
 
 		public virtual void Update()
         {
@@ -61,7 +67,7 @@ namespace CrypticCatacombs
             dungeon = new Dungeon(ResetDungeon);
         }
 
-        public virtual void Draw()
+        public virtual void Draw(SpriteBatch spriteBatch)
         {
 			if (Globals.gameState == 0)
 			{
@@ -73,7 +79,7 @@ namespace CrypticCatacombs
 			}
 			else if (Globals.gameState == 2)
 			{
-				dungeon.Draw(Vector2.Zero);
+				dungeon.Draw(Vector2.Zero, spriteBatch);
 			}
 		}
 

@@ -15,8 +15,8 @@ namespace CrypticCatacombs
     {
 		private SpriteEffects spriteEffect = SpriteEffects.None;
 
-		public Mob(string PATH, Vector2 POS, Vector2 DIMS, int OWNERID) 
-            : base(PATH, POS, DIMS, OWNERID)
+		public Mob(string PATH, Vector2 POS, Vector2 DIMS, Vector2 FRAMES, int OWNERID) 
+            : base(PATH, POS, DIMS, FRAMES, OWNERID)
         {
             speed = 2.0f;
         }
@@ -40,12 +40,12 @@ namespace CrypticCatacombs
 
 			if (!dead && Globals.GetDistance(pos, WIZARD.pos) < 15)
             {
-                WIZARD.GetHit(1);
+                WIZARD.GetHit(this, 1);
                 dead = true;
             }
         }
 
-        public override void Draw(Vector2 OFFSET)
+        public override void Draw(Vector2 OFFSET, SpriteEffects spriteEffects)
         {
             base.Draw(OFFSET, spriteEffect);
         }

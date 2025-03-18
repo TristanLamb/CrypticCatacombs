@@ -20,12 +20,12 @@ namespace CrypticCatacombs
         public AIPlayer(int ID)
             : base(ID)
 		{
-			spawnPoints.Add(new SpawnPoint("2d/Misc/circle", new Vector2(50, 50), new Vector2(35, 35), id));
+			spawnPoints.Add(new SpawnPoint("2d/Misc/circle", new Vector2(50, 50), new Vector2(35, 35), new Vector2(1, 1), id));
 
-			spawnPoints.Add(new SpawnPoint("2d/Misc/circle", new Vector2(Globals.screenWidth / 2, 50), new Vector2(35, 35), id));
+			spawnPoints.Add(new SpawnPoint("2d/Misc/circle", new Vector2(Globals.screenWidth / 2, 50), new Vector2(35, 35), new Vector2(1, 1), id));
 			spawnPoints[spawnPoints.Count - 1].spawnTimer.AddToTimer(500); //spawn delay for next mob
 
-			spawnPoints.Add(new SpawnPoint("2d/Misc/circle", new Vector2(Globals.screenWidth - 50, 50), new Vector2(35, 35), id));
+			spawnPoints.Add(new SpawnPoint("2d/Misc/circle", new Vector2(Globals.screenWidth - 50, 50), new Vector2(35, 35), new Vector2(1, 1), id));
 			spawnPoints[spawnPoints.Count - 1].spawnTimer.AddToTimer(500);
 		}
 
@@ -34,7 +34,7 @@ namespace CrypticCatacombs
 			base.Update(ENEMY, OFFSET);
 		}
 
-        public override void ChangeScore(int SCORE)
+        public override void ChangeScore(float SCORE)
         {
             GameGlobals.score += SCORE;
         }

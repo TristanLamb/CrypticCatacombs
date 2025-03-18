@@ -15,7 +15,7 @@ namespace CrypticCatacombs
 {
     public class Player
     {
-        public int id;
+        public int id, gold;
         public Wizard wizard;
         public List<Unit> units = new List<Unit>();
         public List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
@@ -23,13 +23,14 @@ namespace CrypticCatacombs
         public Player(int ID)
         {
             id = ID;
+			gold = 0;
         }
 
         public virtual void Update(Player ENEMY, Vector2 OFFSET)
         {
             if(wizard != null)
             {
-				wizard.Update(OFFSET);
+				wizard.Update(OFFSET, ENEMY);
 			}
 
 			for (int i = 0; i < spawnPoints.Count; i++)
@@ -45,7 +46,7 @@ namespace CrypticCatacombs
 
 				if (units[i].dead)
 				{
-                    ChangeScore(1);
+                    ChangeScore(0.5f);
 					units.RemoveAt(i);
 					i--;
 				}
@@ -68,7 +69,7 @@ namespace CrypticCatacombs
 		}
 
 
-		public virtual void ChangeScore(int SCORE)
+		public virtual void ChangeScore(float SCORE)
         {
 
         }

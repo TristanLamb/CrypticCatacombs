@@ -15,8 +15,8 @@ namespace CrypticCatacombs
     {
 
         public CustomTimer spawnTimer = new CustomTimer(2200);
-        public SpawnPoint(string PATH, Vector2 POS, Vector2 DIMS, int OWNERID)
-            : base(PATH, POS, DIMS, OWNERID)
+        public SpawnPoint(string PATH, Vector2 POS, Vector2 DIMS, Vector2 FRAMES, int OWNERID)
+            : base(PATH, POS, DIMS, FRAMES, OWNERID)
         {
             dead = false;
 
@@ -41,7 +41,7 @@ namespace CrypticCatacombs
 
         public virtual void SpawnMob()
         {
-            GameGlobals.PassMob(new Slime(new Vector2(pos.X, pos.Y), ownerId));
+            GameGlobals.PassMob(new Slime(new Vector2(pos.X, pos.Y), new Vector2(1, 1), ownerId));
         }
 
 		public override void Draw(Vector2 OFFSET)

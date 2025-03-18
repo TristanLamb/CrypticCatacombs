@@ -12,60 +12,111 @@ using Microsoft.Xna.Framework.Input;
 namespace CrypticCatacombs
 {
     public class Wizard : Unit
-    {
-        private SpriteEffects spriteEffect = SpriteEffects.None;
-        public Wizard(string PATH, Vector2 POS, Vector2 DIMS, int OWNERID)
-            : base(PATH, POS, DIMS, OWNERID)
+	{
+		private SpriteEffects spriteEffect = SpriteEffects.None;
+        public Wizard(string PATH, Vector2 POS, Vector2 DIMS, Vector2 FRAMES, int OWNERID)
+            : base(PATH, POS, DIMS, FRAMES, OWNERID)
         {
             speed = 2.0f;
 
 			health = 5;
 			healthMax = health;
+
+            frameAnimations = true;
+            currentAnimation = 0;
+			frameAnimationList.Add(new FrameAnimation(new Vector2(frameSize.X, frameSize.Y), frames,new Vector2(0, 0), 6, 66, 0, "Walk"));
+			frameAnimationList.Add(new FrameAnimation(new Vector2(frameSize.X, frameSize.Y), frames, new Vector2(0, 0), 1, 66, 0, "Idle"));
+
+            skills.Add(new FlameWall(this));
+			skills.Add(new IceShards(this));
+			skills.Add(new Teleport(this));
 		}
 
-        public override void Update(Vector2 OFFSET)
+        public override void Update(Vector2 OFFSET, Player ENEMY)
         {
             bool checkScroll = false;
-
-			if (Globals.keyboard.GetPress("A"))
+			if (Globals.keyboard.GetPress(GameGlobals.keyBinds.GetKeyByName("Move Left")))
             {
-                pos = new Vector2(pos.X - speed, pos.Y);
+				pos = new Vector2(pos.X - speed, pos.Y);
 				spriteEffect = SpriteEffects.FlipHorizontally;
 				checkScroll = true;
 			}
 
-            if (Globals.keyboard.GetPress("D"))
+            if (Globals.keyboard.GetPress(GameGlobals.keyBinds.GetKeyByName("Move Right")))
             {
                 pos = new Vector2(pos.X + speed, pos.Y);
 				spriteEffect = SpriteEffects.None;
 				checkScroll = true;
 			}
 
-            if (Globals.keyboard.GetPress("W"))
+            if (Globals.keyboard.GetPress(GameGlobals.keyBinds.GetKeyByName("Move Up")))
             {
                 pos = new Vector2(pos.X, pos.Y - speed);
 				checkScroll = true;
 			}
 
-            if (Globals.keyboard.GetPress("S"))
+            if (Globals.keyboard.GetPress(GameGlobals.keyBinds.GetKeyByName("Move Down")))
             {
                 pos = new Vector2(pos.X, pos.Y + speed);
 				checkScroll = true;
 			}
 
-			//rotation = Globals.RotateTowards(pos, new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y) - OFFSET); //to add rotation to follow mouse
-			
+			if (Globals.keyboard.GetSinglePress("D1"))
+			{
+				currentSkill = skills[0];
+				currentSkill.Active = true;
+			}
+			if (Globals.keyboard.GetSinglePress("D2"))
+			{
+				currentSkill = skills[1];
+				currentSkill.Active = true;
+			}
+			if (Globals.keyboard.GetSinglePress("D3"))
+			{
+				currentSkill = skills[2];
+				currentSkill.Active = true;
+			}
 
-			if (Globals.mouse.LeftClick() || Globals.keyboard.GetPress("Space"))
+			if (checkScroll)
+			{
+				GameGlobals.CheckScroll(pos);
+
+				SetAnimationByName("Walk");
+			}
+			else
+			{
+				SetAnimationByName("Idle");
+			}
+
+            //rotation = Globals.RotateTowards(pos, new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y) - OFFSET); //to add rotation to follow mouse
+
+			if (currentSkill == null)
             {
-                GameGlobals.PassProjectile(new Fireball(new Vector2(pos.X, pos.Y), this, new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y) - OFFSET));
+                if (Globals.mouse.LeftClick() || Globals.keyboard.GetPress("Space"))
+                {
+                    GameGlobals.PassProjectile(new Fireball(new Vector2(pos.X, pos.Y), this, new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y) - OFFSET));
+                }
+            }
+            else
+            {
+                currentSkill.Update(OFFSET, ENEMY);
+
+                if(currentSkill.done)
+                {
+					currentSkill.Reset();
+                    currentSkill = null;
+				}
             }
 
-            if(checkScroll)
+            if(Globals.mouse.RightClick())
             {
-                GameGlobals.CheckScroll(pos);
-            }
-
+                if(currentSkill != null)
+                {
+                    currentSkill.targetEffect.done = true;
+					currentSkill.Reset();
+					currentSkill = null;
+				}
+			}
 
             base.Update(OFFSET);
         }

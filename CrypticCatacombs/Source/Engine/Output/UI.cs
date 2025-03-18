@@ -38,11 +38,15 @@ namespace CrypticCatacombs
             Vector2 strDims;
 			bool displayEnemiesKilled = false; // Enable or disable EnemiesKilled counter
 
-            if(displayEnemiesKilled == true)
+			tempString = "Gold = " + DUNGEON.user.gold;
+			strDims = font.MeasureString(tempString);
+			Globals.spriteBatch.DrawString(font, tempString, new Vector2(100, 40), Color.Black);
+
+			if (displayEnemiesKilled == true)
             {
 				tempString = "Score = " + GameGlobals.score;
 				strDims = font.MeasureString(tempString);
-				Globals.spriteBatch.DrawString(font, tempString, new Vector2(Globals.screenWidth / 2 - strDims.X / 2, Globals.screenHeight - 40), Color.Black);
+				Globals.spriteBatch.DrawString(font, tempString, new Vector2(Globals.screenWidth / 2 - strDims.X / 2, Globals.screenHeight - 60), Color.Black);
 			}
             
 

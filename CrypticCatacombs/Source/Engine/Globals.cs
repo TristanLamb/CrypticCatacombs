@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using CrypticCatacombs;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -15,21 +17,20 @@ namespace CrypticCatacombs
     public delegate void PassObject(object i); //variable to pass object to function without returning
 	public delegate object PassObjectAndReturn(object i); //variable to pass object to function with returning another object
 
-	public class Globals
+    public class Globals
     {
         public static int screenHeight, screenWidth, gameState = 0;
-
-		public static System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US"); //use english chars
-
-		public static ContentManager content;  //helps load images
+        public static System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US"); //use english chars
+        public static ContentManager content;  //helps load images
         public static SpriteBatch spriteBatch; //helps draws images
-
         public static CustomKeyboard keyboard;
         public static CustomMouseControls mouse;
-
         public static GameTime gameTime; //keeping time between frames
 
-        public static int ConvertToInt(object INFO)
+        public static string appDataFilePath;
+        public static Save save;
+
+		public static int ConvertToInt(object INFO)
         {
             return Convert.ToInt32(INFO, culture);
         }
@@ -43,7 +44,7 @@ namespace CrypticCatacombs
         {
             float dist = Globals.GetDistance(pos, focus);
 
-            if(dist <= speed)
+            if (dist <= speed)
             {
                 return focus - pos;
             }
@@ -109,5 +110,8 @@ namespace CrypticCatacombs
 
             return angle;
         }
+
+
     }
+
 }

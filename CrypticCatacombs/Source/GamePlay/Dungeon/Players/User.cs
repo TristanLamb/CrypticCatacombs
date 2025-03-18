@@ -19,7 +19,7 @@ namespace CrypticCatacombs
 
         public User(int ID) : base(ID)
         {
-			wizard = new Wizard("2d/Units/WizardPng", new Vector2(300, 300), new Vector2(192, 192), id);
+			wizard = new Wizard("2d/Units/WizardIdleSheet", new Vector2(300, 300), new Vector2(212, 212), new Vector2(6, 1), id);
 		}
 
         public override void Update(Player ENEMY, Vector2 OFFSET)

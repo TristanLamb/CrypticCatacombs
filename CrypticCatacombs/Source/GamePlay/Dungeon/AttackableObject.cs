@@ -11,15 +11,15 @@ using Microsoft.Xna.Framework.Input;
 
 namespace CrypticCatacombs
 {
-    public class AttackableObject : Basic2d
+    public class AttackableObject : Animated2d
     {
         public bool dead;
 
-        public int ownerId;
+        public int ownerId, killValue;
 
         public float speed, hitDist, health, healthMax;
-        public AttackableObject(string PATH, Vector2 POS, Vector2 DIMS, int OWNERID)
-            : base(PATH, POS, DIMS)
+        public AttackableObject(string PATH, Vector2 POS, Vector2 DIMS, Vector2 FRAMES, int OWNERID)
+            : base(PATH, POS, DIMS, FRAMES, Color.White)
         {
             ownerId = OWNERID;
             dead = false;
@@ -27,6 +27,8 @@ namespace CrypticCatacombs
 
             health = 1;
             healthMax = health;
+
+            killValue = 1;
 
             hitDist = 35.0f;
         }
@@ -38,13 +40,15 @@ namespace CrypticCatacombs
             base.Update(OFFSET);
         }
 
-		public virtual void GetHit(float DAMAGE)
+		public virtual void GetHit(AttackableObject ATTACKER, float DAMAGE)
         {
             health -= DAMAGE;
 
             if(health <= 0)
             {
 				dead = true;
+
+                GameGlobals.PassGold(new PlayerValuePacket(ATTACKER.ownerId, killValue)); //gives attacker killvalue in gold
 			}
         }
 

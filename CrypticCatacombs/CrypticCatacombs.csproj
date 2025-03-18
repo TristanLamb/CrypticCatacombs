@@ -19,8 +19,11 @@
 
   <ItemGroup>
     <Compile Remove="Content\bin\**" />
+    <Compile Remove="Content\obj\**" />
     <EmbeddedResource Remove="Content\bin\**" />
+    <EmbeddedResource Remove="Content\obj\**" />
     <None Remove="Content\bin\**" />
+    <None Remove="Content\obj\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,7 +35,15 @@
     <None Remove="Content\2d\Misc\CursorArrow.xnb" />
     <None Remove="Content\2d\Misc\SimpleButton.png" />
     <None Remove="Content\2d\Projectiles\fireball.png" />
+    <None Remove="Content\2d\Projectiles\FlameWall.png" />
+    <None Remove="Content\2d\Projectiles\iceshards.png" />
+    <None Remove="Content\2d\Projectiles\TargetCircle.png" />
+    <None Remove="Content\2d\Projectiles\Teleport.png" />
     <None Remove="Content\2d\Units\Mobs\SlimePng.png" />
+    <None Remove="Content\2d\Units\Mobs\SlimeWalk.png" />
+    <None Remove="Content\2d\Units\WizardIdleSheet.png" />
+    <None Remove="Content\2d\Units\WizardPng.png" />
+    <None Remove="Content\2d\Units\WizardWalkSheet.png" />
     <None Remove="Content\Fonts\Arial16.spritefont" />
     <None Remove="Content\swordsmanIdle.png" />
     <None Remove="Icon.ico" />
@@ -61,10 +72,34 @@
     <Content Include="Content\2d\Projectiles\fireball.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\2d\Projectiles\FlameWall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Projectiles\IceShards.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Misc\TargetCircle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Projectiles\Teleport.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\2d\Units\Mobs\SlimePng.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\2d\Units\Mobs\SlimeWalk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\2d\Units\swordsmanIdle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Units\WizardIdleSheet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Units\WizardPng.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Units\WizardWalkSheet.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Fonts\Arial16.spritefont">
@@ -84,6 +119,16 @@
   <ItemGroup>
     <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.2.1105" />
     <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.2.1105" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Content\2d\UI\" />
+    <Folder Include="Source\Engine\Output\Menus\ExitMenu\" />
+    <Folder Include="XML\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Source\GamePlay\Dungeon\Effects\FireCircle.cs" />
   </ItemGroup>
 
   <Target Name="RestoreDotnetTools" BeforeTargets="Restore">

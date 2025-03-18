@@ -46,8 +46,7 @@ namespace CrypticCatacombs
 		//testing collision
 		public virtual void Update(Vector2 OFFSET, List<Unit> UNITS)
 		{
-			pos += direction * speed;
-
+			ChangePosition();
 			timer.UpdateTimer();
 			if(timer.Test())
 			{
@@ -62,13 +61,18 @@ namespace CrypticCatacombs
 			}	
 		}
 
+		public virtual void ChangePosition()
+		{
+			pos += direction * speed;
+		}
+
 		public virtual bool HitSomething(List<Unit> UNITS)
 		{
 			for (int i = 0; i < UNITS.Count; i++)
 			{
 				if(Globals.GetDistance(pos, UNITS[i].pos) < UNITS[i].hitDist)
 				{
-					UNITS[i].GetHit(1);
+					UNITS[i].GetHit(owner, 1);
 					return true; //removes projectile
 				}
 			}
