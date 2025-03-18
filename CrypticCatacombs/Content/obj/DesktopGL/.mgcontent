@@ -18,10 +18,13 @@
     <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/TargetCircle.png</File>
     <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/Teleport.png</File>
     <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/TeleportPng.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Projectiles/Arrow.png</File>
     <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Projectiles/fireball.png</File>
     <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Projectiles/FlameWall.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Projectiles/iceshards.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Projectiles/IceShards.png</File>
     <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Projectiles/Teleport.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/Mobs/SkeletonArcherPng.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/Mobs/SkeletonArcherWalk.png</File>
     <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/Mobs/SlimePng.png</File>
     <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/Mobs/SlimeWalk.png</File>
     <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/swordsmanIdle.png</File>
@@ -31,6 +34,9 @@
     <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/Fonts/Arial16.spritefont</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

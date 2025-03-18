@@ -13,34 +13,42 @@ namespace CrypticCatacombs
 {
     public class Mob : Unit
     {
+        public bool isAttacking;
+
+        public float attackRange;
+
+        public CustomTimer rePathTimer = new CustomTimer(200), attackTimer = new CustomTimer(350);
+
 		private SpriteEffects spriteEffect = SpriteEffects.None;
 
 		public Mob(string PATH, Vector2 POS, Vector2 DIMS, Vector2 FRAMES, int OWNERID) 
             : base(PATH, POS, DIMS, FRAMES, OWNERID)
         {
-            speed = 2.0f;
+            attackRange = 50;
+			isAttacking = false;
+			speed = 2.0f;
         }
 
         public override void Update(Vector2 OFFSET, Player ENEMY)
         {
-            AI(ENEMY.wizard);
+            AI(ENEMY);
 
 			base.Update(OFFSET);
         }
 
 
-        public virtual void AI(Wizard WIZARD)
+        public virtual void AI(Player ENEMY)
         {
-            pos += Globals.RadialMovement(WIZARD.pos, pos, speed);
+            pos += Globals.RadialMovement(ENEMY.wizard.pos, pos, speed);
 			//rotation = Globals.RotateTowards(pos, WIZARD.pos); //used to rotate towards player
-			if (WIZARD.pos.X < pos.X)
+			if (ENEMY.wizard.pos.X < pos.X)
 				spriteEffect = SpriteEffects.FlipHorizontally; // Face left
 			else
 				spriteEffect = SpriteEffects.None; // Face right
 
-			if (!dead && Globals.GetDistance(pos, WIZARD.pos) < 15)
+			if (!dead && Globals.GetDistance(pos, ENEMY.wizard.pos) < 15)
             {
-                WIZARD.GetHit(this, 1);
+				ENEMY.wizard.GetHit(this, 1);
                 dead = true;
             }
         }

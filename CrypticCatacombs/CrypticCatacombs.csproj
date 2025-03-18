@@ -34,11 +34,14 @@
     <None Remove="Content\2d\Map\wall.png" />
     <None Remove="Content\2d\Misc\CursorArrow.xnb" />
     <None Remove="Content\2d\Misc\SimpleButton.png" />
+    <None Remove="Content\2d\Projectiles\Arrow.png" />
     <None Remove="Content\2d\Projectiles\fireball.png" />
     <None Remove="Content\2d\Projectiles\FlameWall.png" />
     <None Remove="Content\2d\Projectiles\iceshards.png" />
     <None Remove="Content\2d\Projectiles\TargetCircle.png" />
     <None Remove="Content\2d\Projectiles\Teleport.png" />
+    <None Remove="Content\2d\Units\Mobs\SkeletonArcherPng.png" />
+    <None Remove="Content\2d\Units\Mobs\SkeletonArcherWalk.png" />
     <None Remove="Content\2d\Units\Mobs\SlimePng.png" />
     <None Remove="Content\2d\Units\Mobs\SlimeWalk.png" />
     <None Remove="Content\2d\Units\WizardIdleSheet.png" />
@@ -69,6 +72,9 @@
     <Content Include="Content\2d\Misc\SimpleButton.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\2d\Projectiles\Arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\2d\Projectiles\fireball.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -82,6 +88,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\2d\Projectiles\Teleport.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Units\Mobs\SkeletonArcherPng.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Units\Mobs\SkeletonArcherWalk.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\2d\Units\Mobs\SlimePng.png">

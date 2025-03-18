@@ -181,6 +181,18 @@
 /processorParam:TextureFormat=Color
 /build:2d/Misc/TeleportPng.png
 
+#begin 2d/Projectiles/Arrow.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:2d/Projectiles/Arrow.png
+
 #begin 2d/Projectiles/fireball.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -205,7 +217,7 @@
 /processorParam:TextureFormat=Color
 /build:2d/Projectiles/FlameWall.png
 
-#begin 2d/Projectiles/iceshards.png
+#begin 2d/Projectiles/IceShards.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -215,7 +227,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:2d/Projectiles/iceshards.png
+/build:2d/Projectiles/IceShards.png
 
 #begin 2d/Projectiles/Teleport.png
 /importer:TextureImporter
@@ -228,6 +240,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:2d/Projectiles/Teleport.png
+
+#begin 2d/Units/Mobs/SkeletonArcherPng.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:2d/Units/Mobs/SkeletonArcherPng.png
+
+#begin 2d/Units/Mobs/SkeletonArcherWalk.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:2d/Units/Mobs/SkeletonArcherWalk.png
 
 #begin 2d/Units/Mobs/SlimePng.png
 /importer:TextureImporter

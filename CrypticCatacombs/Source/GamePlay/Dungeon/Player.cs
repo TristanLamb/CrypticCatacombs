@@ -74,6 +74,15 @@ namespace CrypticCatacombs
 
         }
 
+		/*public virtual List<AttackableObject> GetAllObjects()
+		{
+			List<AttackableObject> tempObjects = new List<AttackableObject>();
+			tempObjects.AddRange(units.ToList<AttackableObject>());
+			tempObjects.AddRange(spawnPoints.ToList<AttackableObject>());
+		}
+		*/
+
+
         public virtual void Draw(Vector2 OFFSET)
         {
             if (wizard != null)

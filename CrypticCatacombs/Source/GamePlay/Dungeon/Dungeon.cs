@@ -97,6 +97,10 @@ namespace CrypticCatacombs
         {
             if (!user.wizard.dead)
             {
+				/*allObjects.Clear();
+				allObjects.AddRange(user.GetAllObjects());
+				allObjects.AddRange(aIPlayer.GetAllObjects());
+*/
 				user.Update(aIPlayer, offset);
                 aIPlayer.Update(user, offset);
 

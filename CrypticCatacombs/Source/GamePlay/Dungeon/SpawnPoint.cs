@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
@@ -13,11 +14,13 @@ namespace CrypticCatacombs
 {
     public class SpawnPoint : AttackableObject
     {
+        private string mobType;
 
         public CustomTimer spawnTimer = new CustomTimer(2200);
-        public SpawnPoint(string PATH, Vector2 POS, Vector2 DIMS, Vector2 FRAMES, int OWNERID)
+        public SpawnPoint(string PATH, Vector2 POS, Vector2 DIMS, Vector2 FRAMES, int OWNERID, string mobType = "Slime")
             : base(PATH, POS, DIMS, FRAMES, OWNERID)
         {
+            this.mobType = mobType;
             dead = false;
 
 			health = 3;
@@ -41,7 +44,14 @@ namespace CrypticCatacombs
 
         public virtual void SpawnMob()
         {
-            GameGlobals.PassMob(new Slime(new Vector2(pos.X, pos.Y), new Vector2(1, 1), ownerId));
+            if (mobType == "Slime")
+            {
+                GameGlobals.PassMob(new Slime(new Vector2(pos.X, pos.Y), new Vector2(1, 1), ownerId));
+            }
+            else if (mobType == "SkeletonArcher")
+            {
+                GameGlobals.PassMob(new SkeletonArcher(new Vector2(pos.X, pos.Y), new Vector2(1, 1), ownerId));
+            }
         }
 
 		public override void Draw(Vector2 OFFSET)
