@@ -17,9 +17,10 @@ namespace CrypticCatacombs
 		public SkeletonArcher(Vector2 POS, Vector2 FRAMES, int OWNERID)
             : base("2d/Units/Mobs/SkeletonArcherPng", POS, new Vector2(150, 150), new Vector2(6, 1), OWNERID)
         {
-            speed = 2.0f;
+            speed = 1.0f;
 			attackRange = 400;
 			health = 5;
+			attackTimer = new CustomTimer(1000);
 			//frameAnimationList.Add(new FrameAnimation(new Vector2(frameSize.X, frameSize.Y), frames, new Vector2(0, 0), 6, 66, 0, "Walk"));
 		}
 

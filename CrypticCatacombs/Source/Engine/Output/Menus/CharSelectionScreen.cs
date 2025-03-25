@@ -27,10 +27,10 @@ namespace CrypticCatacombs
 
 			bkg = new Basic2d("2d/Backgrounds/CharSelectionBkg", new Vector2(Globals.screenWidth/2, Globals.screenHeight/2), new Vector2(Globals.screenWidth, Globals.screenHeight));
 
-			buttons.Add(new Button("2d/Misc/SimpleButton", new Vector2(10, -50), new Vector2(128, 40), "Fonts/Arial16", "Wizard", gamePlay.ChangeState, 2));
-			buttons.Add(new Button("2d/Misc/SimpleButton", new Vector2(10, -40), new Vector2(128, 40), "Fonts/Arial16", "Swordsman", gamePlay.ChangeState, 2));
-			buttons.Add(new Button("2d/Misc/SimpleButton", new Vector2(10, -30), new Vector2(128, 40), "Fonts/Arial16", "Archer", gamePlay.ChangeState, 2));
-			buttons.Add(new Button("2d/Misc/SimpleButton", new Vector2(10, 20), new Vector2(128, 40), "Fonts/Arial16", "Back", gamePlay.ChangeState, 0));
+			buttons.Add(new Button("2d/Misc/SimpleButton", new Vector2(10, -50), new Vector2(128, 40), new Vector2(1, 1), "Fonts/Arial16", "Wizard", gamePlay.ChangeState, 2));
+			buttons.Add(new Button("2d/Misc/SimpleButton", new Vector2(10, -40), new Vector2(128, 40), new Vector2(1, 1), "Fonts/Arial16", "Swordsman", gamePlay.ChangeState, 2));
+			buttons.Add(new Button("2d/Misc/SimpleButton", new Vector2(10, -30), new Vector2(128, 40), new Vector2(1, 1), "Fonts/Arial16", "Archer", gamePlay.ChangeState, 2));
+			buttons.Add(new Button("2d/Misc/SimpleButton", new Vector2(10, 20), new Vector2(128, 40), new Vector2(1, 1), "Fonts/Arial16", "Back", gamePlay.ChangeState, 0));
 		}
 
 		public virtual void Update()

@@ -30,6 +30,8 @@ namespace CrypticCatacombs
         public static string appDataFilePath;
         public static Save save;
 
+        public static List<Message> msgList = new List<Message>();
+
 		public static int ConvertToInt(object INFO)
         {
             return Convert.ToInt32(INFO, culture);

@@ -17,6 +17,7 @@ namespace CrypticCatacombs;
 
 public class Main : Game
 {
+    //bool lockUpdate;
     private GraphicsDeviceManager graphics;
     private SpriteBatch spriteBatch;
 
@@ -31,6 +32,8 @@ public class Main : Game
 		//IsMouseVisible = true;
 
 		Globals.appDataFilePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+		//lockUpdate = false;
 
 	}
 
@@ -61,7 +64,7 @@ public class Main : Game
         Globals.mouse = new CustomMouseControls();
 
 
-		gamePlay = new GamePlay();
+		gamePlay = new GamePlay(ChangeGameState, this);
 		gamePlay.LoadContent(Content);
 
 
@@ -83,21 +86,43 @@ public class Main : Game
 
     protected override void Update(GameTime gameTime)
     {
-        if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-            Exit();
+        /*if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+        {
+			Exit();
+		}
+          */  
 
 
         Globals.gameTime = gameTime;
         Globals.keyboard.Update();
         Globals.mouse.Update();
 
+/*
+		lockUpdate = false;
+        for(int i = 0; i < Globals.msgList.Count; i++)
+        {
+            Globals.msgList[i].Update();
+            if (!Globals.msgList[i].done)
+            {
+				if (Globals.msgList[i].lockScreen)
+				{
+					lockUpdate = true;
+				}
+			}
+            else
+            {
+                Globals.msgList.RemoveAt(i);
+				i--;
+			}
+            
+        }
 
-		//System.Diagnostics.Debug.WriteLine($"Main Updating, gameState: {Globals.gameState}");
-
-
-		gamePlay.Update();
-
-
+        if(!lockUpdate)
+        {
+			gamePlay.Update();
+		}
+		*/
+        gamePlay.Update();
 
 
 		cursor.Update(new Vector2(Globals.mouse.newMousePos.X + cursor.dims.X/2, Globals.mouse.newMousePos.Y + cursor.dims.Y/2));
@@ -111,9 +136,7 @@ public class Main : Game
 
     public virtual void ChangeGameState(object INFO)
     {
-		System.Diagnostics.Debug.WriteLine($"Changing gameState from {Globals.gameState} to {Globals.ConvertToInt(INFO)}");
 		Globals.gameState = Globals.ConvertToInt(INFO);
-		System.Diagnostics.Debug.WriteLine($"Game State Changed: {Globals.gameState}");
 	}
 
     public virtual void ExitGame(object INFO)
@@ -123,7 +146,7 @@ public class Main : Game
 
 	protected override void Draw(GameTime gameTime)
     {
-        GraphicsDevice.Clear(Color.CornflowerBlue);
+        GraphicsDevice.Clear(Color.Black);
 
         Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
 
@@ -137,6 +160,11 @@ public class Main : Game
 
 		//cursor.Draw(new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y), new Vector2(0, 0), Color.White);
 		cursor.Draw();
+
+        /*for(int i = 0; i < Globals.msgList.Count; i++)
+		{
+			Globals.msgList[i].Draw();
+		}*/
 
 		Globals.spriteBatch.End();
 

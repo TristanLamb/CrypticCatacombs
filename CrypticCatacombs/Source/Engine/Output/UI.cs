@@ -15,12 +15,16 @@ namespace CrypticCatacombs
 {
     public class UI
     {
+		public Basic2d pauseOverlay;
+
 		public SpriteFont font;
 
         public QuantityDisplayBar healthBar;
 
 		public UI()
         {
+			pauseOverlay = new Basic2d("2d/UI/PauseOverlay", new Vector2(Globals.screenWidth / 2, Globals.screenHeight / 2), new Vector2(300, 300));
+
             font = Globals.content.Load<SpriteFont>("Fonts/Arial16");
 
             healthBar = new QuantityDisplayBar(new Vector2(104, 16), 2, Color.Red); //bar = 100 since boarder
@@ -61,6 +65,11 @@ namespace CrypticCatacombs
 				tempString = "Press Enter to Restart!";
 				strDims = font.MeasureString(tempString);
 				Globals.spriteBatch.DrawString(font, tempString, new Vector2(Globals.screenWidth / 2 - strDims.X / 2, Globals.screenHeight / 2 + 24), Color.Black);
+			}
+
+			if(GameGlobals.paused)
+			{
+				pauseOverlay.Draw(Vector2.Zero);
 			}
 		}
     }

@@ -13,11 +13,16 @@ namespace CrypticCatacombs
 {
     public class Wizard : Unit
 	{
+		private Vector2 position;
+		public string name;
+
 		private SpriteEffects spriteEffect = SpriteEffects.None;
         public Wizard(string PATH, Vector2 POS, Vector2 DIMS, Vector2 FRAMES, int OWNERID)
             : base(PATH, POS, DIMS, FRAMES, OWNERID)
         {
-            speed = 2.0f;
+			speed = 2.0f;
+
+			name = "Wizard";
 
 			health = 5;
 			healthMax = health;
@@ -35,31 +40,47 @@ namespace CrypticCatacombs
         public override void Update(Vector2 OFFSET, Player ENEMY)
         {
             bool checkScroll = false;
+			Vector2 newPos = pos;
+
 			if (Globals.keyboard.GetPress(GameGlobals.keyBinds.GetKeyByName("Move Left")))
-            {
-				pos = new Vector2(pos.X - speed, pos.Y);
-				spriteEffect = SpriteEffects.FlipHorizontally;
-				checkScroll = true;
+			{
+				newPos.X -= speed;
+				if (!GameGlobals.map.CheckCollision(newPos))
+				{
+					pos = newPos;
+					spriteEffect = SpriteEffects.FlipHorizontally;
+					checkScroll = true;
+				}
+			}
+			if (Globals.keyboard.GetPress(GameGlobals.keyBinds.GetKeyByName("Move Right")))
+			{
+				newPos.X += speed;
+				if (!GameGlobals.map.CheckCollision(newPos))
+				{
+					pos = newPos;
+					spriteEffect = SpriteEffects.None;
+					checkScroll = true;
+				}
+			}
+			if (Globals.keyboard.GetPress(GameGlobals.keyBinds.GetKeyByName("Move Up")))
+			{
+				newPos.Y -= speed;
+				if (!GameGlobals.map.CheckCollision(newPos))
+				{
+					pos = newPos;
+					checkScroll = true;
+				}
+			}
+			if (Globals.keyboard.GetPress(GameGlobals.keyBinds.GetKeyByName("Move Down")))
+			{
+				newPos.Y += speed;
+				if (!GameGlobals.map.CheckCollision(newPos))
+				{
+					pos = newPos;
+					checkScroll = true;
+				}
 			}
 
-            if (Globals.keyboard.GetPress(GameGlobals.keyBinds.GetKeyByName("Move Right")))
-            {
-                pos = new Vector2(pos.X + speed, pos.Y);
-				spriteEffect = SpriteEffects.None;
-				checkScroll = true;
-			}
-
-            if (Globals.keyboard.GetPress(GameGlobals.keyBinds.GetKeyByName("Move Up")))
-            {
-                pos = new Vector2(pos.X, pos.Y - speed);
-				checkScroll = true;
-			}
-
-            if (Globals.keyboard.GetPress(GameGlobals.keyBinds.GetKeyByName("Move Down")))
-            {
-                pos = new Vector2(pos.X, pos.Y + speed);
-				checkScroll = true;
-			}
 
 			if (Globals.keyboard.GetSinglePress("D1"))
 			{
@@ -92,7 +113,7 @@ namespace CrypticCatacombs
 
 			if (currentSkill == null)
             {
-                if (Globals.mouse.LeftClick() || Globals.keyboard.GetPress("Space"))
+                if (Globals.mouse.LeftClick() || Globals.keyboard.GetSinglePress("Space"))
                 {
                     GameGlobals.PassProjectile(new Fireball(new Vector2(pos.X, pos.Y), this, new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y) - OFFSET));
                 }

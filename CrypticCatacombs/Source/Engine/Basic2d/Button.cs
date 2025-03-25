@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
@@ -23,15 +24,15 @@ namespace CrypticCatacombs
 
         public object info;
 
-        public Action<int> ButtonClicked;
+        public PassObject ButtonClicked;
 
-		public Button(string PATH, Vector2 POS, Vector2 DIMS, string FONTPATH, string TEXT, Action<int> BUTTONCLICKED, object INFO)
+		public Button(string PATH, Vector2 POS, Vector2 DIMS, Vector2 FRAMES, string FONTPATH, string TEXT, PassObject BUTTONCLICKED, object INFO)
             : base(PATH, POS, DIMS)
         {
             text = TEXT;
 			ButtonClicked = BUTTONCLICKED;
 			this.info = INFO;
-
+			System.Diagnostics.Debug.WriteLine($"Font loaded: {font != null}");
 			if (FONTPATH != "")
 			{
 				font = Globals.content.Load<SpriteFont>(FONTPATH);
@@ -119,6 +120,8 @@ namespace CrypticCatacombs
 
 			Vector2 strDims = font.MeasureString(text);
 			Globals.spriteBatch.DrawString(font, text, pos + updateOffset + new Vector2(-strDims.X / 2, -strDims.Y / 2), Color.Black);
+			System.Diagnostics.Debug.WriteLine($"Drawing button: {text} at {pos}");
+
 		}
 	}
 }

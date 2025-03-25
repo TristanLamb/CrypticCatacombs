@@ -42,15 +42,16 @@ namespace CrypticCatacombs
 
 		public virtual void GetHit(AttackableObject ATTACKER, float DAMAGE)
         {
-            health -= DAMAGE;
+            health -= DAMAGE; //may not need
 
-            if(health <= 0)
+			if (health <= 0)
             {
 				dead = true;
 
                 GameGlobals.PassGold(new PlayerValuePacket(ATTACKER.ownerId, killValue)); //gives attacker killvalue in gold
 			}
         }
+
 
 		public override void Draw(Vector2 OFFSET, SpriteEffects spriteEffects)
         {

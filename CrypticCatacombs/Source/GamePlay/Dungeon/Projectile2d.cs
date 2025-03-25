@@ -22,11 +22,11 @@ namespace CrypticCatacombs
 
 		public Vector2 direction;
 
-		public Unit owner;
+		public AttackableObject owner;
 
 		public CustomTimer timer;
 
-		public Projectile2d(string PATH, Vector2 POS, Vector2 DIMS, Unit OWNER, Vector2 TARGET)
+		public Projectile2d(string PATH, Vector2 POS, Vector2 DIMS, AttackableObject OWNER, Vector2 TARGET)
 			: base(PATH, POS, DIMS)
 		{
 			done = false;
@@ -44,7 +44,7 @@ namespace CrypticCatacombs
 		}
 
 		//testing collision
-		public virtual void Update(Vector2 OFFSET, List<Unit> UNITS)
+		public virtual void Update(Vector2 OFFSET, List<AttackableObject> UNITS)
 		{
 			ChangePosition();
 			timer.UpdateTimer();
@@ -66,11 +66,12 @@ namespace CrypticCatacombs
 			pos += direction * speed;
 		}
 
-		public virtual bool HitSomething(List<Unit> UNITS)
+		public virtual bool HitSomething(List<AttackableObject> UNITS)
 		{
 			for (int i = 0; i < UNITS.Count; i++)
 			{
-				if(Globals.GetDistance(pos, UNITS[i].pos) < UNITS[i].hitDist)
+
+				if(owner.ownerId != UNITS[i].ownerId && Globals.GetDistance(pos, UNITS[i].pos) < UNITS[i].hitDist)
 				{
 					UNITS[i].GetHit(owner, 1);
 					return true; //removes projectile

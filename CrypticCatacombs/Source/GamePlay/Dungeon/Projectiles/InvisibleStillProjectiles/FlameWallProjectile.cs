@@ -23,7 +23,7 @@ namespace CrypticCatacombs
 		}
 
 		//testing collision
-		public override void Update(Vector2 OFFSET, List<Unit> UNITS)
+		public override void Update(Vector2 OFFSET, List<AttackableObject> UNITS)
 		{
 			base.Update(OFFSET, UNITS);
 		}
@@ -33,7 +33,7 @@ namespace CrypticCatacombs
 			
 		}
 
-		public override bool HitSomething(List<Unit> UNITS)
+		public override bool HitSomething(List<AttackableObject> UNITS)
 		{
 			return false;
 		}

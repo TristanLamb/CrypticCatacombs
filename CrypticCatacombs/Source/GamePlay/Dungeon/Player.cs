@@ -15,6 +15,8 @@ namespace CrypticCatacombs
 {
     public class Player
     {
+
+		public bool defeated;
         public int id, gold;
         public Wizard wizard;
         public List<Unit> units = new List<Unit>();
@@ -24,6 +26,7 @@ namespace CrypticCatacombs
         {
             id = ID;
 			gold = 0;
+			defeated = false;
         }
 
         public virtual void Update(Player ENEMY, Vector2 OFFSET)
@@ -51,6 +54,8 @@ namespace CrypticCatacombs
 					i--;
 				}
 			}
+
+			CheckIfDefeated();
 		}
 
         public virtual void AddUnit(object INFO)
@@ -74,16 +79,30 @@ namespace CrypticCatacombs
 
         }
 
-		/*public virtual List<AttackableObject> GetAllObjects()
+
+
+		public virtual List<AttackableObject> GetAllObjects()
 		{
 			List<AttackableObject> tempObjects = new List<AttackableObject>();
 			tempObjects.AddRange(units.ToList<AttackableObject>());
 			tempObjects.AddRange(spawnPoints.ToList<AttackableObject>());
+
+			if (wizard != null)
+			{
+				tempObjects.Add(wizard);
+			}
+
+			return tempObjects;
 		}
-		*/
+
+		public virtual void CheckIfDefeated()
+		{
+
+		}
 
 
-        public virtual void Draw(Vector2 OFFSET)
+
+		public virtual void Draw(Vector2 OFFSET)
         {
             if (wizard != null)
             {

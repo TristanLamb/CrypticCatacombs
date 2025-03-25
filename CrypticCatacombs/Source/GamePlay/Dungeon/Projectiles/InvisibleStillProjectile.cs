@@ -17,7 +17,7 @@ namespace CrypticCatacombs
 	{
 		float ticks, currentTicks;
 
-		public InvisibleStillProjectile(Vector2 POS, Vector2 DIMS, Unit OWNER, Vector2 TARGET, int MSEC)
+		public InvisibleStillProjectile(Vector2 POS, Vector2 DIMS, AttackableObject OWNER, Vector2 TARGET, int MSEC)
 			: base("2d/Misc/solid", POS, DIMS, OWNER, TARGET)
 		{
 			ticks = 3;
@@ -26,7 +26,7 @@ namespace CrypticCatacombs
 			timer = new CustomTimer(MSEC);
 		}
 
-		public override void Update(Vector2 OFFSET, List<Unit> UNITS)
+		public override void Update(Vector2 OFFSET, List<AttackableObject> UNITS)
 		{
 			base.Update(OFFSET, UNITS);
 
@@ -49,7 +49,7 @@ namespace CrypticCatacombs
 			
 		}
 
-		public override bool HitSomething(List<Unit> UNITS)
+		public override bool HitSomething(List<AttackableObject> UNITS)
 		{
 			return false;
 		}

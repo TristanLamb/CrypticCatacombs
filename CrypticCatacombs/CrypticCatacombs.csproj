@@ -40,6 +40,8 @@
     <None Remove="Content\2d\Projectiles\iceshards.png" />
     <None Remove="Content\2d\Projectiles\TargetCircle.png" />
     <None Remove="Content\2d\Projectiles\Teleport.png" />
+    <None Remove="Content\2d\UI\PauseOverlay.png" />
+    <None Remove="Content\2d\UI\XButton.png" />
     <None Remove="Content\2d\Units\Mobs\SkeletonArcherPng.png" />
     <None Remove="Content\2d\Units\Mobs\SkeletonArcherWalk.png" />
     <None Remove="Content\2d\Units\Mobs\SlimePng.png" />
@@ -90,6 +92,12 @@
     <Content Include="Content\2d\Projectiles\Teleport.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\2d\UI\PauseOverlay.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\UI\XButton.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\2d\Units\Mobs\SkeletonArcherPng.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -134,7 +142,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Content\2d\UI\" />
     <Folder Include="Source\Engine\Output\Menus\ExitMenu\" />
     <Folder Include="XML\" />
   </ItemGroup>

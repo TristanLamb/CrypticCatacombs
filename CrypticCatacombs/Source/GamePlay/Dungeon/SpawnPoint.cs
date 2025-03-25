@@ -15,30 +15,41 @@ namespace CrypticCatacombs
     public class SpawnPoint : AttackableObject
     {
         private string mobType;
+        public bool spawnOnce;
 
-        public CustomTimer spawnTimer = new CustomTimer(2200);
-        public SpawnPoint(string PATH, Vector2 POS, Vector2 DIMS, Vector2 FRAMES, int OWNERID, string mobType = "Slime")
+		public CustomTimer spawnTimer = new CustomTimer(2200); //setting spawn delay
+        public SpawnPoint(string PATH, Vector2 POS, Vector2 DIMS, Vector2 FRAMES, int OWNERID, string mobType = "Slime", bool spawnOnce = false)
             : base(PATH, POS, DIMS, FRAMES, OWNERID)
         {
             this.mobType = mobType;
-            dead = false;
+			this.spawnOnce = spawnOnce;
+			dead = false;
 
 			health = 3;
 			healthMax = health;
-
+            
 			hitDist = 35.0f;
-        }
+		}
 
         public override void Update(Vector2 OFFSET)
         {
-            spawnTimer.UpdateTimer();
-            if(spawnTimer.Test()) //testing timer
+            if (!spawnOnce || !dead)
             {
-                SpawnMob();
-                spawnTimer.ResetToZero();
-            }
-
-
+				spawnTimer.UpdateTimer();
+				if (spawnTimer.Test()) //testing timer
+				{
+					SpawnMob();
+					if (spawnOnce)
+                    {
+						dead = true;
+					}
+                    else
+                    {
+						spawnTimer.ResetToZero();
+					}
+				}
+			}
+			
             base.Update(OFFSET);
         }
 
@@ -52,7 +63,7 @@ namespace CrypticCatacombs
             {
                 GameGlobals.PassMob(new SkeletonArcher(new Vector2(pos.X, pos.Y), new Vector2(1, 1), ownerId));
             }
-        }
+		}
 
 		public override void Draw(Vector2 OFFSET)
         {

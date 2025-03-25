@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tristan Lambert\\Desktop\\NewCapstoneTesting\\FirstSkilLWorking\\CrypticCatacombs\\CrypticCatacombs\\CrypticCatacombs.csproj": {}
+    "C:\\Users\\Tristan Lambert\\Desktop\\NewCapstoneTesting\\CrypticCatacombs - Copy\\CrypticCatacombs\\CrypticCatacombs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tristan Lambert\\Desktop\\NewCapstoneTesting\\FirstSkilLWorking\\CrypticCatacombs\\CrypticCatacombs\\CrypticCatacombs.csproj": {
+    "C:\\Users\\Tristan Lambert\\Desktop\\NewCapstoneTesting\\CrypticCatacombs - Copy\\CrypticCatacombs\\CrypticCatacombs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tristan Lambert\\Desktop\\NewCapstoneTesting\\FirstSkilLWorking\\CrypticCatacombs\\CrypticCatacombs\\CrypticCatacombs.csproj",
+        "projectUniqueName": "C:\\Users\\Tristan Lambert\\Desktop\\NewCapstoneTesting\\CrypticCatacombs - Copy\\CrypticCatacombs\\CrypticCatacombs.csproj",
         "projectName": "CrypticCatacombs",
-        "projectPath": "C:\\Users\\Tristan Lambert\\Desktop\\NewCapstoneTesting\\FirstSkilLWorking\\CrypticCatacombs\\CrypticCatacombs\\CrypticCatacombs.csproj",
+        "projectPath": "C:\\Users\\Tristan Lambert\\Desktop\\NewCapstoneTesting\\CrypticCatacombs - Copy\\CrypticCatacombs\\CrypticCatacombs.csproj",
         "packagesPath": "C:\\Users\\Tristan Lambert\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tristan Lambert\\Desktop\\NewCapstoneTesting\\FirstSkilLWorking\\CrypticCatacombs\\CrypticCatacombs\\obj\\",
+        "outputPath": "C:\\Users\\Tristan Lambert\\Desktop\\NewCapstoneTesting\\CrypticCatacombs - Copy\\CrypticCatacombs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

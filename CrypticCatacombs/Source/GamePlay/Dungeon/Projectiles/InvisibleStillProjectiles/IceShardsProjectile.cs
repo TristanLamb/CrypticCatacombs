@@ -26,7 +26,7 @@ namespace CrypticCatacombs
 		}
 
 		//testing collision
-		public override void Update(Vector2 OFFSET, List<Unit> UNITS)
+		public override void Update(Vector2 OFFSET, List<AttackableObject> UNITS)
 		{
 			pos += direction * speed;
 			HitSomething(UNITS);
