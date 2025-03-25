@@ -1,0 +1,49 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Tristan Lambert\\Desktop\\OrganizedCapstone\\1\\CrypticCatacombs\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFB383B-4A76-4A23-AE5F-16C59D4A912F}|CrypticCatacombs\\CrypticCatacombs.csproj|c:\\users\\tristan lambert\\desktop\\organizedcapstone\\1\\crypticcatacombs\\crypticcatacombs\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFB383B-4A76-4A23-AE5F-16C59D4A912F}|CrypticCatacombs\\CrypticCatacombs.csproj|solutionrelative:crypticcatacombs\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{131369f2-062d-44a2-8671-91ff31efb4f4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Main.cs",
+              "DocumentMoniker": "C:\\Users\\Tristan Lambert\\Desktop\\OrganizedCapstone\\1\\CrypticCatacombs\\CrypticCatacombs\\Main.cs",
+              "RelativeDocumentMoniker": "CrypticCatacombs\\Main.cs",
+              "ToolTip": "C:\\Users\\Tristan Lambert\\Desktop\\OrganizedCapstone\\1\\CrypticCatacombs\\CrypticCatacombs\\Main.cs",
+              "RelativeToolTip": "CrypticCatacombs\\Main.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAvwHAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T06:57:04.755Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
