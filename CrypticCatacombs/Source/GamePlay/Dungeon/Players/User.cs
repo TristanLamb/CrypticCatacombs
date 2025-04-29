@@ -22,9 +22,9 @@ namespace CrypticCatacombs
 			wizard = new Wizard("2d/Units/WizardIdleSheet", new Vector2(300, 300), new Vector2(212, 212), new Vector2(6, 1), id);
 		}
 
-        public override void Update(Player ENEMY, Vector2 OFFSET)
+        public override void Update(Player ENEMY, Vector2 OFFSET, SquareGrid GRID)
         {
-            base.Update(ENEMY, OFFSET);
+            base.Update(ENEMY, OFFSET, GRID);
         }
 
     }

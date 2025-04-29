@@ -1,16 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Cryptic Catacombs",
-    "\\Cryptic Catacombs\\bin",
-    "\\Cryptic Catacombs\\bin\\Debug",
-    "\\Cryptic Catacombs\\bin\\Debug\\net6.0",
-    "\\Cryptic Catacombs\\bin\\Debug\\net6.0\\runtimes\\win-x86",
-    "\\Cryptic Catacombs\\bin\\Debug\\net6.0\\runtimes\\win-x86\\native",
-    "\\Cryptic Catacombs\\Content",
-    "\\Cryptic Catacombs\\Content\\obj\\DesktopGL\\net6.0",
-    "\\Cryptic Catacombs\\Content\\obj\\DesktopGL\\net6.0\\Content"
+    "\\CrypticCatacombs",
+    "\\CrypticCatacombs\\Content",
+    "\\CrypticCatacombs\\Source"
   ],
-  "SelectedNode": "\\Cryptic Catacombs\\Content\\Content.mgcb",
+  "SelectedNode": "\\CrypticCatacombs\\Content\\Content.mgcb",
   "PreviewInSolutionExplorer": false
 }

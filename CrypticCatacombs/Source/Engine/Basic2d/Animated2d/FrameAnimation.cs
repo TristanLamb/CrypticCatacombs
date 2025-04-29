@@ -35,7 +35,7 @@ namespace CrypticCatacombs
             frames = totalframes;
             currentFrame = 0;
             frameTimer = new CustomTimer(timePerFrame); //how long a frame shows for
-            maxPasses = MAXPASSES;
+            maxPasses = MAXPASSES; //how many times you want animation to show
             currentPass = 0;
             name = NAME;
             FireAction = null;

@@ -17,15 +17,16 @@ namespace CrypticCatacombs
 	{
 
 
-		public Arrow(Vector2 POS, Unit OWNER, Vector2 TARGET)
-			: base("2d/Projectiles/fireball", POS, new Vector2(100, 100), OWNER, TARGET)
+		public Arrow(Vector2 POS, AttackableObject OWNER, Vector2 TARGET)
+			: base("2d/Projectiles/Arrow", POS, new Vector2(50, 50), OWNER, TARGET)
 		{
-			speed = 4.0f;
+			speed = 5.0f;
 			timer = new CustomTimer(1800);
+			rotation = (float)Math.Atan2(TARGET.Y - POS.Y, TARGET.X - POS.X);
 		}
 
 		//testing collision
-		public override void Update(Vector2 OFFSET, List<Unit> UNITS)
+		public override void Update(Vector2 OFFSET, List<AttackableObject> UNITS)
 		{
 			base.Update(OFFSET, UNITS);
 		}

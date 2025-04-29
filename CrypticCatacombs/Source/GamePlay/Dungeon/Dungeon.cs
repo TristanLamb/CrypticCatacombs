@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing.Text;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,98 +18,155 @@ namespace CrypticCatacombs
     {
         public Vector2 offset;
 
+		public CharacterMenu characterMenu;
+
         public UI ui;
 
         public User user;
         public AIPlayer aIPlayer;
 
-        public Map map;
+		private ShopKeeper shopKeeper;
+
+		public SquareGrid grid;
+
+        //public Map map;
 
         public List<Projectile2d> projectiles = new List<Projectile2d>();
 		public List<Effect2d> effects = new List<Effect2d>();
-		PassObject ResetDungeon;
+		public List<AttackableObject> allObjects = new List<AttackableObject>();
+		PassObject ResetDungeon, ChangeGameState;
+		private CustomTimer nextRoomTimer = new CustomTimer(1000);
+
+		private MapLayouts mapLayouts;
+
+		bool shopGenerated = false;
+		ShopHeart shopHeart;
+		TeleportSkill teleportSkill;
+		ManaPotion manaPotion;
+		HealthPotion healthPotion;
 
 
-		public Dungeon(PassObject RESETDUNGEON)
+
+		public Dungeon(PassObject RESETDUNGEON, MapLayouts MAPLAYOUTS, int layoutIndex, PassObject CHANGEGAMESTATE, User user)
         {
-            ResetDungeon = RESETDUNGEON;
+			ResetDungeon = RESETDUNGEON;
+			this.mapLayouts = MAPLAYOUTS;
+			ChangeGameState = CHANGEGAMESTATE;
 
 
-            GameGlobals.PassProjectile = AddProjectile;
+			GameGlobals.PassProjectile = AddProjectile;
 			GameGlobals.PassEffect = AddEffect;
 			GameGlobals.PassMob = AddMob;
             GameGlobals.PassSpawnPoint = AddSpawnPoint;
             GameGlobals.CheckScroll = CheckScroll;
 			GameGlobals.PassGold = AddGold;
+			GameGlobals.paused = false;
 
-            user = new User(1);
+			GameGlobals.map = new Map(mapLayouts.GetLayout(layoutIndex), 31);
+
+			this.user = user;
+			
             aIPlayer = new AIPlayer(2);
 
 			offset = new Vector2(0, 0);
-            ui = new UI();
 
-			//background = new TileBackground2d("2d/Map/floor", new Vector2(-100, -100), new Vector2(100, 100), new Vector2(grid.totalPhysicalDims.X + 100, grid.totalPhysicalDims.Y + 100));
-			//background = new Map("2d/Map/floor", "2d/Map/wall", new Vector2(0, 0), new Vector2(30, 31), new Vector2(1680, 930));
+			//characterMenu = new Menu2d(new Vector2(Globals.screenWidth/2, Globals.screenHeight/2), new Vector2(350, 500), null);
+			characterMenu = new CharacterMenu(user.wizard);
 
-			int[,] tiles = new int[,]
+			//grid = new SquareGrid(new Vector2(35, 35), new Vector2(-100, -100), new Vector2(Globals.screenWidth + 200, Globals.screenHeight + 200));
+			grid = new SquareGrid(new Vector2(31, 31), new Vector2(0, 0), new Vector2(Globals.screenWidth, Globals.screenHeight));
+
+			ui = new UI();
+
+			
+			int[,] mapData = mapLayouts.GetLayout(layoutIndex);
+			for (int i = 0; i < mapData.GetLength(0); i++)
 			{
-				{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-				{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
-			}; //54x30
+				for (int j = 0; j < mapData.GetLength(1); j++)
+				{
+					if (mapData[i, j] == 1
+						|| mapData[i, j] == 8
+                        || mapData[i, j] == 9
+                        || mapData[i, j] == 10
+                        || mapData[i, j] == 11
+						|| mapData[i, j] == 12
+						|| mapData[i, j] == 13
+						|| mapData[i, j] == 14
+						|| mapData[i, j] == 15
+						|| mapData[i, j] == 16
+						|| mapData[i, j] == 17
+						|| mapData[i, j] == 18)
+					{
+						Vector2 gridPos = new Vector2(j, i);
+						GridLocation loc = grid.GetSlotFromLocation(gridPos);
+						if (loc != null)
+						{
+							loc.SetToFilled(true);       // now filled
+							loc.impassable = true;       // now pathfinding won't go through
+						}
+						else
+						{
+							System.Diagnostics.Debug.WriteLine($"No location found for {gridPos}");
+						}
+					}
+					if (mapData[i, j] == 2)
+					{
+						Vector2 gridPos = new Vector2(j, i);
+						GridLocation loc = grid.GetSlotFromLocation(gridPos);
+						if (loc != null)
+						{
+							loc.SetToDoor(true);       // now filled
+							loc.impassable = true;       // now pathfinding won't go through
+						}
+						else
+						{
+							System.Diagnostics.Debug.WriteLine($"No location found for {gridPos}");
+						}
+					}
+				}
+			}
 
-			map = new Map(tiles, 31);
+
+			if (GameGlobals.currentMapLayout == 9)
+			{
+				shopKeeper = new ShopKeeper("2d/Units/NPC/ShopKeeperIdle", new Vector2(450, 305), new Vector2(212, 212), new Vector2(6, 1), 9);
+
+				shopHeart = new ShopHeart("2d/Misc/Heart", new Vector2(375, 356), ui);
+
+				teleportSkill = new TeleportSkill("2d/Misc/TeleportPng", new Vector2(435, 343));
+
+				manaPotion = new ManaPotion("2d/Misc/ManaPotion", new Vector2(495, 356));
+				
+				healthPotion = new HealthPotion("2d/Misc/HealthPotion", new Vector2(555, 356));
+
+			}
+
 		}
 
 		public void LoadContent(ContentManager content)
 		{
-			map.LoadContent(content);
+			GameGlobals.map.LoadContent(content);
 		}
 
 
 		public virtual void Update()
         {
-            if (!user.wizard.dead)
+			//System.Diagnostics.Debug.WriteLine($"Rooms Completed: {GameGlobals.roomsCompleted}");
+			//System.Diagnostics.Debug.WriteLine($"Current MapLayout: {GameGlobals.currentMapLayout}");
+			if (!DontUpdate())
             {
-				/*allObjects.Clear();
+				allObjects.Clear();
 				allObjects.AddRange(user.GetAllObjects());
 				allObjects.AddRange(aIPlayer.GetAllObjects());
-*/
-				user.Update(aIPlayer, offset);
-                aIPlayer.Update(user, offset);
+
+				user.Update(aIPlayer, offset, grid);
+                aIPlayer.Update(user, offset, grid);
 
 
 
                 for (int i = 0; i < projectiles.Count; i++)
                 {
-                    projectiles[i].Update(offset, aIPlayer.units.ToList<Unit>());
+                    projectiles[i].Update(offset, allObjects);
 
                     //removing a projectile once it hit something or expired
                     if (projectiles[i].done)
@@ -127,18 +185,89 @@ namespace CrypticCatacombs
 						i--;
 					}
 				}
-
-
 			}
             else
             {
-                if(Globals.keyboard.GetPress("Enter"))
+                if(Globals.keyboard.GetPress("Enter") && user.wizard.dead)
                 {
-                    ResetDungeon(null);
-                }
+					GameGlobals.roomsCompleted = 0;
+					ResetDungeon(null);
+					ChangeGameState(0);
+				}
             }
-                ui.Update(this);
+
+			if(grid != null)
+			{
+				grid.Update(offset);
+			}
+
+			if (Globals.keyboard.GetSinglePress("Escape") && !user.wizard.dead)
+			{
+				GameGlobals.paused = !GameGlobals.paused;
+			}
+
+			characterMenu.Update();
+
+			if(Globals.keyboard.GetSinglePress("C"))
+			{
+				characterMenu.Active = true;
+			}
+			if (Globals.keyboard.GetSinglePress("G"))
+			{
+				grid.showGrid = !grid.showGrid;
+			}
+
+			if (aIPlayer.defeated)
+			{
+				grid.LoadDoor();
+				GameGlobals.enemiesDefeated = true;
+				if (GameGlobals.nextRoom == true)
+				{
+					//Globals.msgList.Add(new DismissableMessage(new Vector2(Globals.screenWidth/2, Globals.screenHeight/2), new Vector2(150, 130), "You Win!", Color.Black, true, WinConfirm));
+					WinConfirm(null);
+					GameGlobals.nextRoom = false;
+					nextRoomTimer.AddToTimer(4000);
+				}
+				//WinConfirm(null);
+
+
+			}
+			if(GameGlobals.currentMapLayout == 9)
+			{
+				if (shopGenerated == true)
+				{
+					shopKeeper.Update(offset);
+					shopHeart.Update(Vector2.Zero);
+					teleportSkill.Update(Vector2.Zero);
+					manaPotion.Update(Vector2.Zero);
+					healthPotion.Update(Vector2.Zero);
+				}
+				else
+				{
+					GenerateShop();
+				}
+				
+			}
+			
+
+			ui.Update(this);
 		}
+
+		public virtual void GenerateShop()
+		{
+			shopKeeper = new ShopKeeper("2d/Units/NPC/ShopKeeperIdle", new Vector2(450, 305), new Vector2(212, 212), new Vector2(6, 1), 9);
+
+			shopHeart = new ShopHeart("2d/Misc/Heart", new Vector2(375, 356), ui);
+
+			teleportSkill = new TeleportSkill("2d/Misc/TeleportPng", new Vector2(435, 343));
+
+			manaPotion = new ManaPotion("2d/Misc/ManaPotion", new Vector2(495, 356));
+
+			healthPotion = new HealthPotion("2d/Misc/HealthPotion", new Vector2(555, 356));
+
+			shopGenerated = true;
+		}
+
 
 		public virtual void AddGold(object INFO)
 		{
@@ -147,6 +276,7 @@ namespace CrypticCatacombs
 			if (user.id == packet.playerId)
 			{
 				user.gold += (int)packet.value;
+				GameGlobals.user.gold = user.gold;
 			}
 			else if (aIPlayer.id == packet.playerId)
 			{
@@ -225,9 +355,28 @@ namespace CrypticCatacombs
             
 		}
 
+		public virtual bool DontUpdate()
+		{
+			if(user.wizard.dead || GameGlobals.paused || characterMenu.Active)
+			{
+				return true;
+			}	
+			return false;
+		}
+
+
+		public virtual void WinConfirm(object INFO)
+		{
+			GameGlobals.roomsCompleted++;
+			ResetDungeon(null);
+			ChangeGameState(2);
+		}
+
         public virtual void Draw(Vector2 OFFSET, SpriteBatch spriteBatch)
         {
-			map.Draw(spriteBatch);
+			
+			GameGlobals.map.Draw(spriteBatch);
+			grid.DrawGrid(offset);
 
 			user.Draw(offset);
             aIPlayer.Draw(offset);
@@ -242,7 +391,18 @@ namespace CrypticCatacombs
 				effects[i].Draw(offset);
 			}
 
+			if (GameGlobals.currentMapLayout == 9)
+			{
+				shopKeeper.Draw(offset);
+				shopHeart.Draw(Vector2.Zero);
+				teleportSkill.Draw(Vector2.Zero);
+				manaPotion.Draw(Vector2.Zero);
+				healthPotion.Draw(Vector2.Zero);
+			}
+
 			ui.Draw(this);
+
+			characterMenu.Draw();
 		}
 
 

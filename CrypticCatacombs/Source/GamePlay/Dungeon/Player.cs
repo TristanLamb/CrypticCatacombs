@@ -15,6 +15,8 @@ namespace CrypticCatacombs
 {
     public class Player
     {
+
+		public bool defeated;
         public int id, gold;
         public Wizard wizard;
         public List<Unit> units = new List<Unit>();
@@ -24,25 +26,26 @@ namespace CrypticCatacombs
         {
             id = ID;
 			gold = 0;
+			defeated = false;
         }
 
-        public virtual void Update(Player ENEMY, Vector2 OFFSET)
+        public virtual void Update(Player ENEMY, Vector2 OFFSET, SquareGrid GRID)
         {
             if(wizard != null)
             {
-				wizard.Update(OFFSET, ENEMY);
+				wizard.Update(OFFSET, ENEMY, GRID);
 			}
 
 			for (int i = 0; i < spawnPoints.Count; i++)
 			{
-				spawnPoints[i].Update(OFFSET);
+				spawnPoints[i].Update(OFFSET, ENEMY, GRID);
 
 			}
 
 
 			for (int i = 0; i < units.Count; i++)
 			{
-				units[i].Update(OFFSET, ENEMY);
+				units[i].Update(OFFSET, ENEMY, GRID);
 
 				if (units[i].dead)
 				{
@@ -51,6 +54,8 @@ namespace CrypticCatacombs
 					i--;
 				}
 			}
+
+			CheckIfDefeated();
 		}
 
         public virtual void AddUnit(object INFO)
@@ -74,16 +79,30 @@ namespace CrypticCatacombs
 
         }
 
-		/*public virtual List<AttackableObject> GetAllObjects()
+
+
+		public virtual List<AttackableObject> GetAllObjects()
 		{
 			List<AttackableObject> tempObjects = new List<AttackableObject>();
 			tempObjects.AddRange(units.ToList<AttackableObject>());
 			tempObjects.AddRange(spawnPoints.ToList<AttackableObject>());
+
+			if (wizard != null)
+			{
+				tempObjects.Add(wizard);
+			}
+
+			return tempObjects;
 		}
-		*/
+
+		public virtual void CheckIfDefeated()
+		{
+
+		}
 
 
-        public virtual void Draw(Vector2 OFFSET)
+
+		public virtual void Draw(Vector2 OFFSET)
         {
             if (wizard != null)
             {

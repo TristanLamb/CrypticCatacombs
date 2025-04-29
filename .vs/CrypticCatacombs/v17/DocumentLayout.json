@@ -1,10 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Tristan Lambert\\Desktop\\OrganizedCapstone\\1\\CrypticCatacombs\\",
+  "WorkspaceRootPath": "C:\\Users\\trist\\Desktop\\GithubFinalRepo\\CrypticCatacombs\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ADFB383B-4A76-4A23-AE5F-16C59D4A912F}|CrypticCatacombs\\CrypticCatacombs.csproj|c:\\users\\tristan lambert\\desktop\\organizedcapstone\\1\\crypticcatacombs\\crypticcatacombs\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADFB383B-4A76-4A23-AE5F-16C59D4A912F}|CrypticCatacombs\\CrypticCatacombs.csproj|solutionrelative:crypticcatacombs\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADFB383B-4A76-4A23-AE5F-16C59D4A912F}|CrypticCatacombs\\CrypticCatacombs.csproj|c:\\users\\trist\\desktop\\githubfinalrepo\\crypticcatacombs\\crypticcatacombs\\source\\engine\\output\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFB383B-4A76-4A23-AE5F-16C59D4A912F}|CrypticCatacombs\\CrypticCatacombs.csproj|solutionrelative:crypticcatacombs\\source\\engine\\output\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFB383B-4A76-4A23-AE5F-16C59D4A912F}|CrypticCatacombs\\CrypticCatacombs.csproj|c:\\users\\trist\\desktop\\githubfinalrepo\\crypticcatacombs\\crypticcatacombs\\source\\engine\\output\\maplayouts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFB383B-4A76-4A23-AE5F-16C59D4A912F}|CrypticCatacombs\\CrypticCatacombs.csproj|solutionrelative:crypticcatacombs\\source\\engine\\output\\maplayouts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFB383B-4A76-4A23-AE5F-16C59D4A912F}|CrypticCatacombs\\CrypticCatacombs.csproj|c:\\users\\trist\\desktop\\githubfinalrepo\\crypticcatacombs\\crypticcatacombs\\source\\gameplay\\dungeon\\players\\aiplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFB383B-4A76-4A23-AE5F-16C59D4A912F}|CrypticCatacombs\\CrypticCatacombs.csproj|solutionrelative:crypticcatacombs\\source\\gameplay\\dungeon\\players\\aiplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFB383B-4A76-4A23-AE5F-16C59D4A912F}|CrypticCatacombs\\CrypticCatacombs.csproj|c:\\users\\trist\\desktop\\githubfinalrepo\\crypticcatacombs\\crypticcatacombs\\source\\gameplay\\dungeon\\units\\classes\\wizard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFB383B-4A76-4A23-AE5F-16C59D4A912F}|CrypticCatacombs\\CrypticCatacombs.csproj|solutionrelative:crypticcatacombs\\source\\gameplay\\dungeon\\units\\classes\\wizard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFB383B-4A76-4A23-AE5F-16C59D4A912F}|CrypticCatacombs\\CrypticCatacombs.csproj|c:\\users\\trist\\desktop\\githubfinalrepo\\crypticcatacombs\\crypticcatacombs\\source\\engine\\output\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFB383B-4A76-4A23-AE5F-16C59D4A912F}|CrypticCatacombs\\CrypticCatacombs.csproj|solutionrelative:crypticcatacombs\\source\\engine\\output\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFB383B-4A76-4A23-AE5F-16C59D4A912F}|CrypticCatacombs\\CrypticCatacombs.csproj|c:\\users\\trist\\desktop\\githubfinalrepo\\crypticcatacombs\\crypticcatacombs\\source\\gameplay\\gameplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFB383B-4A76-4A23-AE5F-16C59D4A912F}|CrypticCatacombs\\CrypticCatacombs.csproj|solutionrelative:crypticcatacombs\\source\\gameplay\\gameplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADFB383B-4A76-4A23-AE5F-16C59D4A912F}|CrypticCatacombs\\CrypticCatacombs.csproj|c:\\users\\trist\\desktop\\githubfinalrepo\\crypticcatacombs\\crypticcatacombs\\source\\gameplay\\gameglobals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADFB383B-4A76-4A23-AE5F-16C59D4A912F}|CrypticCatacombs\\CrypticCatacombs.csproj|solutionrelative:crypticcatacombs\\source\\gameplay\\gameglobals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,32 +38,92 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{131369f2-062d-44a2-8671-91ff31efb4f4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Main.cs",
-              "DocumentMoniker": "C:\\Users\\Tristan Lambert\\Desktop\\OrganizedCapstone\\1\\CrypticCatacombs\\CrypticCatacombs\\Main.cs",
-              "RelativeDocumentMoniker": "CrypticCatacombs\\Main.cs",
-              "ToolTip": "C:\\Users\\Tristan Lambert\\Desktop\\OrganizedCapstone\\1\\CrypticCatacombs\\CrypticCatacombs\\Main.cs",
-              "RelativeToolTip": "CrypticCatacombs\\Main.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAvwHAAAAAFAAAAAAAAAA==",
+              "Title": "Map.cs",
+              "DocumentMoniker": "C:\\Users\\trist\\Desktop\\GithubFinalRepo\\CrypticCatacombs\\CrypticCatacombs\\Source\\Engine\\Output\\Map.cs",
+              "RelativeDocumentMoniker": "CrypticCatacombs\\Source\\Engine\\Output\\Map.cs",
+              "ToolTip": "C:\\Users\\trist\\Desktop\\GithubFinalRepo\\CrypticCatacombs\\CrypticCatacombs\\Source\\Engine\\Output\\Map.cs",
+              "RelativeToolTip": "CrypticCatacombs\\Source\\Engine\\Output\\Map.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAmwEoAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T06:57:04.755Z",
+              "WhenOpened": "2025-04-29T19:23:37.786Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Wizard.cs",
+              "DocumentMoniker": "C:\\Users\\trist\\Desktop\\GithubFinalRepo\\CrypticCatacombs\\CrypticCatacombs\\Source\\GamePlay\\Dungeon\\Units\\Classes\\Wizard.cs",
+              "RelativeDocumentMoniker": "CrypticCatacombs\\Source\\GamePlay\\Dungeon\\Units\\Classes\\Wizard.cs",
+              "ToolTip": "C:\\Users\\trist\\Desktop\\GithubFinalRepo\\CrypticCatacombs\\CrypticCatacombs\\Source\\GamePlay\\Dungeon\\Units\\Classes\\Wizard.cs",
+              "RelativeToolTip": "CrypticCatacombs\\Source\\GamePlay\\Dungeon\\Units\\Classes\\Wizard.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAYwGYAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T19:13:35.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GameGlobals.cs",
+              "DocumentMoniker": "C:\\Users\\trist\\Desktop\\GithubFinalRepo\\CrypticCatacombs\\CrypticCatacombs\\Source\\GamePlay\\GameGlobals.cs",
+              "RelativeDocumentMoniker": "CrypticCatacombs\\Source\\GamePlay\\GameGlobals.cs",
+              "ToolTip": "C:\\Users\\trist\\Desktop\\GithubFinalRepo\\CrypticCatacombs\\CrypticCatacombs\\Source\\GamePlay\\GameGlobals.cs",
+              "RelativeToolTip": "CrypticCatacombs\\Source\\GamePlay\\GameGlobals.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T18:56:23.214Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GamePlay.cs",
+              "DocumentMoniker": "C:\\Users\\trist\\Desktop\\GithubFinalRepo\\CrypticCatacombs\\CrypticCatacombs\\Source\\GamePlay\\GamePlay.cs",
+              "RelativeDocumentMoniker": "CrypticCatacombs\\Source\\GamePlay\\GamePlay.cs",
+              "ToolTip": "C:\\Users\\trist\\Desktop\\GithubFinalRepo\\CrypticCatacombs\\CrypticCatacombs\\Source\\GamePlay\\GamePlay.cs",
+              "RelativeToolTip": "CrypticCatacombs\\Source\\GamePlay\\GamePlay.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAcwM0AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T20:07:44.874Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UI.cs",
+              "DocumentMoniker": "C:\\Users\\trist\\Desktop\\GithubFinalRepo\\CrypticCatacombs\\CrypticCatacombs\\Source\\Engine\\Output\\UI.cs",
+              "RelativeDocumentMoniker": "CrypticCatacombs\\Source\\Engine\\Output\\UI.cs",
+              "ToolTip": "C:\\Users\\trist\\Desktop\\GithubFinalRepo\\CrypticCatacombs\\CrypticCatacombs\\Source\\Engine\\Output\\UI.cs",
+              "RelativeToolTip": "CrypticCatacombs\\Source\\Engine\\Output\\UI.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAkwC8AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T04:41:47.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MapLayouts.cs",
+              "DocumentMoniker": "C:\\Users\\trist\\Desktop\\GithubFinalRepo\\CrypticCatacombs\\CrypticCatacombs\\Source\\Engine\\Output\\MapLayouts.cs",
+              "RelativeDocumentMoniker": "CrypticCatacombs\\Source\\Engine\\Output\\MapLayouts.cs",
+              "ToolTip": "C:\\Users\\trist\\Desktop\\GithubFinalRepo\\CrypticCatacombs\\CrypticCatacombs\\Source\\Engine\\Output\\MapLayouts.cs",
+              "RelativeToolTip": "CrypticCatacombs\\Source\\Engine\\Output\\MapLayouts.cs",
+              "ViewState": "AgIAAO8AAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T18:58:31.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AIPlayer.cs",
+              "DocumentMoniker": "C:\\Users\\trist\\Desktop\\GithubFinalRepo\\CrypticCatacombs\\CrypticCatacombs\\Source\\GamePlay\\Dungeon\\Players\\AIPlayer.cs",
+              "RelativeDocumentMoniker": "CrypticCatacombs\\Source\\GamePlay\\Dungeon\\Players\\AIPlayer.cs",
+              "ToolTip": "C:\\Users\\trist\\Desktop\\GithubFinalRepo\\CrypticCatacombs\\CrypticCatacombs\\Source\\GamePlay\\Dungeon\\Players\\AIPlayer.cs",
+              "RelativeToolTip": "CrypticCatacombs\\Source\\GamePlay\\Dungeon\\Players\\AIPlayer.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAQwGQAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T18:58:24.501Z"
             }
           ]
         }

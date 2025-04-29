@@ -4,36 +4,122 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Backgrounds/CharSelectionBkg.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Backgrounds/MainMenu.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/door.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/floor.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/wall.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/circle.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/CursorArrow.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/shade.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/SimpleButton.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/SlotImage.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/solid.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/TargetCircle.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/Teleport.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/TeleportPng.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Projectiles/Arrow.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Projectiles/fireball.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Projectiles/FlameWall.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Projectiles/IceShards.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Projectiles/Teleport.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/Mobs/SkeletonArcherPng.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/Mobs/SkeletonArcherWalk.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/Mobs/SlimePng.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/Mobs/SlimeWalk.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/swordsmanIdle.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/WizardIdleSheet.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/WizardPng.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/WizardWalkSheet.png</File>
-    <File>C:/Users/Tristan Lambert/Desktop/NewCapstoneTesting/FirstSkilLWorking/CrypticCatacombs/CrypticCatacombs/Content/Fonts/Arial16.spritefont</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Backgrounds/CharSelectionBkg.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Backgrounds/MainMenu.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/door.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/doorBottomM.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/doorBottomOpenL.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/doorBottomOpenR.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/doorBottomS.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/doorLeftM.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/doorLeftOpenB.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/doorLeftOpenT.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/doorLeftS.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/doorRightM.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/doorRightMEB.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/doorRightMET.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/doorRightOpenB.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/doorRightOpenT.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/doorRightS.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/doorTopM.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/doorTopOpenL.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/doorTopOpenR.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/doorTopS.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/EmptySpace.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/floor.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/shelfBottom.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/shelfBottomCorner.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/shelfSide.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/shelfTop.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/wall - Copy.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Map/wall.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/circle.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/CursorArrow.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/HealthPotion.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/Heart.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/ManaPotion.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/MessageBKG.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/nothing.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/shade.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/SimpleButton.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/SlotImage.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/solid.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/TargetCircle.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/Teleport.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Misc/TeleportPng.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Projectiles/Arrow.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Projectiles/EliteOrcAttackAOE.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Projectiles/EliteOrcAttackWave - Copy.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Projectiles/EliteOrcAttackWave.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Projectiles/fireball.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Projectiles/FlameWall.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Projectiles/FlameWallSheet.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Projectiles/IceShards.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Projectiles/Teleport.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/UI/PauseOverlay.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/UI/XButton.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/Mobs/EliteOrcAOE.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/Mobs/EliteOrcIdle.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/Mobs/EliteOrcMelee.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/Mobs/EliteOrcWalk.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/Mobs/EliteOrcWave.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/Mobs/SkeletonArcherIdle.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/Mobs/SkeletonArcherPng.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/Mobs/SkeletonArcherWalk.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/Mobs/SlimeIdle.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/Mobs/SlimePng.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/Mobs/SlimeWalk.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/NPC/ShopKeeperIdle.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/swordsmanIdle.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/WizardIdleSheet.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/WizardPng.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/2d/Units/WizardWalkSheet.png</File>
+    <File>C:/Users/Tristan Lambert/Desktop/CrypticCatacombs/CrypticCatacombs/Content/Fonts/Arial16.spritefont</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

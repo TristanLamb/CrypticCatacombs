@@ -87,6 +87,23 @@ namespace CrypticCatacombs
             }
 		}
 
+		public virtual void Draw(Vector2 OFFSET, Color COLOR)
+		{
+			if (myModel != null)
+			{
+				Globals.spriteBatch.Draw(
+					myModel,
+					new Rectangle((int)(pos.X + OFFSET.X), (int)(pos.Y + OFFSET.Y), (int)dims.X, (int)dims.Y),
+					null,
+					COLOR, //tint
+					rotation, //rotation
+					new Microsoft.Xna.Framework.Vector2(myModel.Bounds.Width / 2, myModel.Bounds.Height / 2),
+					new SpriteEffects(),
+					0 //layer depth
+					);
+			}
+		}
+
 		public virtual void Draw(Vector2 OFFSET, Vector2 ORIGIN, Color COLOR)
         {
             if (myModel != null)

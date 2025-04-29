@@ -17,14 +17,14 @@ namespace CrypticCatacombs
 	{
 
 
-		public Fireball(Vector2 POS, Unit OWNER, Vector2 TARGET)
+		public Fireball(Vector2 POS, AttackableObject OWNER, Vector2 TARGET)
 			: base("2d/Projectiles/fireball", POS, new Vector2(100, 100), OWNER, TARGET)
 		{
-			
+			timer = new CustomTimer(900);
 		}
 
 		//testing collision
-		public override void Update(Vector2 OFFSET, List<Unit> UNITS)
+		public override void Update(Vector2 OFFSET, List<AttackableObject> UNITS)
 		{
 			base.Update(OFFSET, UNITS);
 		}

@@ -21,14 +21,13 @@ namespace CrypticCatacombs
 
 		public MainMenu(GamePlay gamePlay)
 		{
-			System.Diagnostics.Debug.WriteLine("Main Menu Created");
-
+			//System.Diagnostics.Debug.WriteLine("Main Menu Created");
 
 
 			bkg = new Basic2d("2d/Backgrounds/MainMenu", new Vector2(Globals.screenWidth/2, Globals.screenHeight/2), new Vector2(Globals.screenWidth, Globals.screenHeight));
 
-			buttons.Add(new Button("2d/Misc/SimpleButton", new Vector2(10, 10), new Vector2(128, 40), "Fonts/Arial16", "Play", gamePlay.ChangeState, 1));
-			buttons.Add(new Button("2d/Misc/SimpleButton", new Vector2(10, 20), new Vector2(128, 40), "Fonts/Arial16", "Exit", gamePlay.ChangeState, 0));
+			buttons.Add(new Button("2d/Misc/SimpleButton", new Vector2(10, 10), new Vector2(128, 40), new Vector2(1, 1), "Fonts/Arial16", "Play", gamePlay.ChangeState, 1));
+			buttons.Add(new Button("2d/Misc/SimpleButton", new Vector2(10, 20), new Vector2(128, 40), new Vector2(1, 1), "Fonts/Arial16", "Exit", gamePlay.ChangeState, -1));
 			
 		}
 

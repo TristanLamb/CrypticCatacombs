@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CrypticCatacombs")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f18f704abe26b154a2c1ed05bb02e9ee95f4526")]
 [assembly: System.Reflection.AssemblyProductAttribute("CrypticCatacombs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CrypticCatacombs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

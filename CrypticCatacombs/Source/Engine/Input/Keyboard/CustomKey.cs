@@ -44,7 +44,7 @@ namespace CrypticCatacombs
             {
                 tempStr = KEY;
             }
-            if (KEY == "Space")
+			if (KEY == "Space")
             {
                 tempStr = " ";
             }
